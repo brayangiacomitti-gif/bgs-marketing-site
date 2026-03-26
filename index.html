@@ -309,6 +309,18 @@
     animation: float-badge 3s 1s ease-in-out infinite;
   }
 
+  .hfb-4 {
+    top: 200px;
+    left: -40px;
+    animation: float-badge 3s 1.5s ease-in-out infinite;
+  }
+
+  .hfb-5 {
+    top: 120px;
+    left: -20px;
+    animation: float-badge 3s 2s ease-in-out infinite;
+  }
+
   @keyframes float-badge {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-8px); }
@@ -1229,6 +1241,196 @@
     .video-scroll { padding: 0 20px 16px; gap: 12px; }
   }
 
+  /* ===== EQUIPMENT STRIP ===== */
+  .equip-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 20px;
+    background: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: 16px;
+    transition: all 0.3s;
+    min-width: 100px;
+  }
+
+  .equip-item:hover {
+    border-color: var(--cyan);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(94,207,201,0.1);
+  }
+
+  .equip-icon {
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  .equip-item span {
+    font-family: 'Sora', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gray-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== STORYMAKER ===== */
+  .storymaker {
+    background: linear-gradient(180deg, var(--black) 0%, var(--dark) 50%, var(--black) 100%);
+    border-top: 1px solid var(--dark-border);
+    border-bottom: 1px solid var(--dark-border);
+  }
+
+  .storymaker-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .storymaker-text h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+  }
+
+  .storymaker-text p {
+    font-size: 16px;
+    color: var(--gray-light);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .storymaker-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .sm-feat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: rgba(94,207,201,0.04);
+    border: 1px solid rgba(94,207,201,0.1);
+    border-radius: 12px;
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray-light);
+    transition: all 0.3s;
+  }
+
+  .sm-feat:hover {
+    border-color: var(--cyan);
+    background: rgba(94,207,201,0.08);
+    color: var(--white);
+  }
+
+  .sm-feat-icon {
+    font-size: 18px;
+  }
+
+  .storymaker-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .sm-phone {
+    width: 220px;
+    height: 440px;
+    background: #111118;
+    border-radius: 32px;
+    border: 3px solid #2a2a3a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+
+  .sm-live-badge {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #E53935;
+    color: white;
+    font-family: 'Sora', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    animation: pulse-live 1.5s ease infinite;
+    z-index: 5;
+  }
+
+  @keyframes pulse-live {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  .sm-phone-inner {
+    width: 90%;
+    height: 90%;
+    border-radius: 26px;
+    background: linear-gradient(160deg, #1a0a2e, #0d1b2a);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    overflow: hidden;
+  }
+
+  .sm-story-icon { font-size: 40px; }
+
+  .sm-story-text {
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray-light);
+    text-align: center;
+  }
+
+  .sm-float-1, .sm-float-2 {
+    position: absolute;
+    background: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-family: 'Sora', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gray-light);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+
+  .sm-float-1 { top: 30px; right: -20px; animation: float-badge 3s ease-in-out infinite; }
+  .sm-float-2 { bottom: 50px; left: -20px; animation: float-badge 3s 1s ease-in-out infinite; }
+
+  @media (max-width: 1024px) {
+    .storymaker-inner { grid-template-columns: 1fr; gap: 40px; }
+    .storymaker-visual { order: -1; }
+  }
+
+  @media (max-width: 768px) {
+    .storymaker-features { grid-template-columns: 1fr; }
+    .equip-strip { gap: 12px !important; }
+    .equip-item { min-width: 80px; padding: 12px 14px; }
+  }
+
   /* ===== RESULTS ===== */
   .results-grid {
     display: grid;
@@ -1693,6 +1895,8 @@
       <div class="hero-float-badge hfb-1">📹 Captação</div>
       <div class="hero-float-badge hfb-2">✂️ Edição</div>
       <div class="hero-float-badge hfb-3">📱 Publicação</div>
+      <div class="hero-float-badge hfb-4">📝 Roteirização</div>
+      <div class="hero-float-badge hfb-5">💡 Iluminação</div>
     </div>
 
     <!-- TEXT SIDE -->
@@ -1747,10 +1951,14 @@
         <span class="big">1:1</span>
         <span class="sub">mês : dia</span>
       </div>
-      <div class="orbit-item">📹</div>
-      <div class="orbit-item">✂️</div>
-      <div class="orbit-item">📱</div>
-      <div class="orbit-item">🎯</div>
+      <div class="orbit-item" style="top:-10px;left:50%;transform:translateX(-50%)">📹</div>
+      <div class="orbit-item" style="top:15%;right:-10px">✂️</div>
+      <div class="orbit-item" style="top:50%;right:-10px;transform:translateY(-50%)">📱</div>
+      <div class="orbit-item" style="bottom:15%;right:-10px">🎯</div>
+      <div class="orbit-item" style="bottom:-10px;left:50%;transform:translateX(-50%)">💡</div>
+      <div class="orbit-item" style="bottom:15%;left:-10px">🎙️</div>
+      <div class="orbit-item" style="top:50%;left:-10px;transform:translateY(-50%)">📝</div>
+      <div class="orbit-item" style="top:15%;left:-10px">🎬</div>
     </div>
     <div class="method-text">
       <div class="section-tag">Nosso Método Exclusivo</div>
@@ -1759,11 +1967,11 @@
       <div class="method-features">
         <div class="method-feat">
           <div class="method-feat-icon">✓</div>
-          <div class="method-feat-text"><strong>Roteiros prontos antes da gravação</strong> — você só precisa ser você. A gente cuida do resto.</div>
+          <div class="method-feat-text"><strong>Roteiros + Teleprompter</strong> — scripts prontos antes da gravação. Teleprompter disponível se você precisar. Sem improviso.</div>
         </div>
         <div class="method-feat">
           <div class="method-feat-icon">✓</div>
-          <div class="method-feat-text"><strong>Equipe completa no seu espaço</strong> — câmera, iluminação, áudio e direção profissional.</div>
+          <div class="method-feat-text"><strong>Equipamentos profissionais completos</strong> — levamos tudo: câmera, iluminação, microfone lapela/boom, tripé e estabilizador.</div>
         </div>
         <div class="method-feat">
           <div class="method-feat-icon">✓</div>
@@ -1780,6 +1988,39 @@
       </a>
     </div>
   </div>
+
+  <!-- EQUIPMENT STRIP -->
+  <div class="equip-strip reveal" style="max-width:1200px;margin:60px auto 0;display:flex;justify-content:center;gap:24px;flex-wrap:wrap;padding:0 40px">
+    <div class="equip-item">
+      <div class="equip-icon">📷</div>
+      <span>Câmera 4K</span>
+    </div>
+    <div class="equip-item">
+      <div class="equip-icon">💡</div>
+      <span>Iluminação LED</span>
+    </div>
+    <div class="equip-item">
+      <div class="equip-icon">🎙️</div>
+      <span>Microfone</span>
+    </div>
+    <div class="equip-item">
+      <div class="equip-icon">📝</div>
+      <span>Roteiros</span>
+    </div>
+    <div class="equip-item">
+      <div class="equip-icon">📺</div>
+      <span>Teleprompter</span>
+    </div>
+    <div class="equip-item">
+      <div class="equip-icon">🎬</div>
+      <span>Estabilizador</span>
+    </div>
+    <div class="equip-item">
+      <div class="equip-icon">🔊</div>
+      <span>Áudio Pro</span>
+    </div>
+  </div>
+  <p style="text-align:center;color:var(--gray);font-size:13px;margin-top:20px;font-style:italic">Levamos todos os equipamentos — você não precisa ter nada.</p>
 </section>
 
 <!-- PROCESS -->
@@ -1821,6 +2062,40 @@
         <h3>Relatório + Próximo Mês</h3>
         <p>Analisamos os resultados, identificamos o que performou melhor e já planejamos a próxima diária com os aprendizados.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORYMAKER - COBERTURA DE EVENTOS -->
+<section class="storymaker">
+  <div class="storymaker-inner reveal">
+    <div class="storymaker-text">
+      <div class="section-tag">Novo Serviço</div>
+      <h2>StoryMaker:<br><span style="background:linear-gradient(135deg,var(--cyan),var(--purple-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent">Cobertura de eventos em tempo real.</span></h2>
+      <p>A BGS vai até o seu evento com equipe completa. Captamos, editamos e postamos stories e Reels <strong>ao vivo, durante o evento</strong>. Seu público acompanha tudo em tempo real enquanto acontece.</p>
+      <div class="storymaker-features">
+        <div class="sm-feat"><span class="sm-feat-icon">📹</span> Captação ao vivo</div>
+        <div class="sm-feat"><span class="sm-feat-icon">✂️</span> Edição em tempo real</div>
+        <div class="sm-feat"><span class="sm-feat-icon">📱</span> Postagem instantânea</div>
+        <div class="sm-feat"><span class="sm-feat-icon">📸</span> Stories + Reels</div>
+        <div class="sm-feat"><span class="sm-feat-icon">🎤</span> Entrevistas no local</div>
+        <div class="sm-feat"><span class="sm-feat-icon">🚀</span> Cobertura completa</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5541987050150&text=Quero%20saber%20sobre%20o%20StoryMaker%20para%20meu%20evento!" class="btn-primary">
+        <span>Quero pra meu evento</span>
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14m-6-6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="storymaker-visual">
+      <div class="sm-phone">
+        <div class="sm-live-badge">● LIVE</div>
+        <div class="sm-phone-inner">
+          <div class="sm-story-icon">🎥</div>
+          <div class="sm-story-text">Captando,<br>editando e<br>postando agora.</div>
+        </div>
+      </div>
+      <div class="sm-float-1">⚡ Postando ao vivo</div>
+      <div class="sm-float-2">📊 +340% engajamento</div>
     </div>
   </div>
 </section>
