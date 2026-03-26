@@ -1,0 +1,2546 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BGS Marketing — Grave 1 mês de conteúdo em 1 dia. Produção de vídeo profissional, social media e tráfego pago em Curitiba.">
+<meta name="keywords" content="agência de marketing curitiba, produção de vídeo, social media, reels, 1 mês em 1 dia, BGS Marketing">
+<meta property="og:title" content="BGS Marketing | 1 Mês em 1 Dia">
+<meta property="og:description" content="Grave 1 mês de conteúdo profissional em apenas 1 dia. Vídeos, social media e tráfego pago.">
+<meta property="og:image" content="./images/logo-roxa.png">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="./images/icone.png">
+<title>BGS Marketing | 1 Mês em 1 Dia — Conteúdo Profissional para Sua Marca</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple: #6B2D8B;
+    --purple-dark: #4A1D60;
+    --purple-light: #8B3DAB;
+    --cyan: #5ECFC9;
+    --cyan-glow: #7AEEE8;
+    --black: #0A0A0F;
+    --dark: #111118;
+    --dark-card: #16161F;
+    --dark-border: #222233;
+    --white: #F5F5F7;
+    --gray: #8888A0;
+    --gray-light: #AAAABB;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== NOISE OVERLAY ===== */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.4s ease;
+    background: transparent;
+  }
+
+  nav.scrolled {
+    background: rgba(10,10,15,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(94,207,201,0.1);
+    padding: 12px 40px;
+  }
+
+  .nav-logo img {
+    height: 42px;
+    transition: height 0.3s ease;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--gray-light);
+    text-decoration: none;
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--cyan); }
+
+  .nav-cta {
+    background: var(--purple) !important;
+    color: var(--white) !important;
+    padding: 10px 24px !important;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s !important;
+    border: 1px solid transparent;
+  }
+
+  .nav-cta:hover {
+    background: transparent !important;
+    border-color: var(--cyan) !important;
+    color: var(--cyan) !important;
+  }
+
+  .nav-mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+
+  .nav-mobile-toggle span {
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    transition: 0.3s;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 120px 40px 80px;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 30%, rgba(107,45,139,0.25) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 70%, rgba(94,207,201,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 100% 100% at 50% 50%, rgba(10,10,15,1) 0%, var(--black) 100%);
+  }
+
+  .hero-grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(94,207,201,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(94,207,201,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black, transparent);
+  }
+
+  .hero-split {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  /* Hero Video Side */
+  .hero-video-side {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+
+  .hero-phone-frame {
+    width: 280px;
+    height: 560px;
+    background: #111118;
+    border-radius: 40px;
+    border: 3px solid #2a2a3a;
+    overflow: hidden;
+    position: relative;
+    box-shadow:
+      0 30px 100px rgba(0,0,0,0.6),
+      0 0 80px rgba(107,45,139,0.12),
+      0 0 0 1px rgba(255,255,255,0.05);
+  }
+
+  .hero-phone-notch {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 24px;
+    background: #0a0a10;
+    border-radius: 0 0 16px 16px;
+    z-index: 10;
+  }
+
+  .hero-phone-screen {
+    width: 100%;
+    height: 100%;
+    border-radius: 37px;
+    overflow: hidden;
+  }
+
+  .hero-video-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(160deg, #2a0e40 0%, #0d0618 60%, #0a1520 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    position: relative;
+  }
+
+  .hero-video-play-ring {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid rgba(94,207,201,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: ring-pulse 2.5s ease infinite;
+  }
+
+  @keyframes ring-pulse {
+    0%, 100% { border-color: rgba(94,207,201,0.3); transform: scale(1); }
+    50% { border-color: rgba(94,207,201,0.6); transform: scale(1.08); }
+  }
+
+  .hero-video-play {
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255,255,255,0.15);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .hero-video-play:hover {
+    background: var(--purple);
+    border-color: var(--purple-light);
+    transform: scale(1.1);
+  }
+
+  .hero-video-label {
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  .hero-video-sub {
+    font-size: 12px;
+    color: var(--gray);
+  }
+
+  /* Floating badges around hero phone */
+  .hero-float-badge {
+    position: absolute;
+    background: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray-light);
+    white-space: nowrap;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  }
+
+  .hfb-1 {
+    top: 60px;
+    right: -20px;
+    animation: float-badge 3s ease-in-out infinite;
+  }
+
+  .hfb-2 {
+    bottom: 140px;
+    left: -30px;
+    animation: float-badge 3s 0.5s ease-in-out infinite;
+  }
+
+  .hfb-3 {
+    bottom: 40px;
+    right: -10px;
+    animation: float-badge 3s 1s ease-in-out infinite;
+  }
+
+  @keyframes float-badge {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  /* Hero Text Side */
+  .hero-text-side {
+    text-align: left;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    text-align: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(94,207,201,0.08);
+    border: 1px solid rgba(94,207,201,0.2);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 24px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-badge .dot {
+    width: 6px;
+    height: 6px;
+    background: var(--cyan);
+    border-radius: 50%;
+    animation: pulse-dot 2s ease infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.6); }
+  }
+
+  .hero h1 {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(38px, 6vw, 72px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 10px;
+    animation: fadeUp 0.8s 0.15s ease both;
+  }
+
+  .hero h1 .highlight {
+    background: linear-gradient(135deg, var(--cyan) 0%, var(--cyan-glow) 50%, var(--purple-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero h1 .line-break { display: block; }
+
+  .hero-sub {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(16px, 2vw, 22px);
+    font-weight: 300;
+    color: var(--gray-light);
+    margin-bottom: 16px;
+    line-height: 1.5;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  .hero-sub strong {
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  .hero-proof {
+    font-size: 14px;
+    color: var(--gray);
+    margin-bottom: 40px;
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+
+  .hero-proof span {
+    color: var(--cyan);
+    font-weight: 700;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.5s ease both;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--purple) 0%, var(--purple-light) 100%);
+    color: var(--white);
+    padding: 16px 36px;
+    border-radius: 60px;
+    font-family: 'Sora', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--purple-light) 0%, var(--cyan) 100%);
+    opacity: 0;
+    transition: opacity 0.4s;
+    border-radius: inherit;
+  }
+
+  .btn-primary:hover::after { opacity: 1; }
+  .btn-primary span { position: relative; z-index: 1; }
+  .btn-primary svg { position: relative; z-index: 1; }
+
+  .btn-primary:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 8px 40px rgba(107,45,139,0.4); }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--white);
+    padding: 16px 36px;
+    border-radius: 60px;
+    font-family: 'Sora', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--dark-border);
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  .btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); }
+
+  /* ===== FLOATING STATS (hero bottom) ===== */
+  .hero-stats {
+    display: flex;
+    justify-content: flex-start;
+    gap: 36px;
+    margin-top: 40px;
+    animation: fadeUp 0.8s 0.7s ease both;
+  }
+
+  .hero-stat {
+    text-align: center;
+  }
+
+  .hero-stat .number {
+    font-family: 'Sora', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1;
+  }
+
+  .hero-stat .number .accent { color: var(--cyan); }
+
+  .hero-stat .label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gray);
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  /* ===== SECTION BASE ===== */
+  section {
+    padding: 100px 40px;
+    position: relative;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 64px;
+  }
+
+  .section-tag {
+    display: inline-block;
+    font-family: 'Sora', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 16px;
+    position: relative;
+    padding-left: 20px;
+  }
+
+  .section-tag::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 10px;
+    height: 2px;
+    background: var(--cyan);
+    transform: translateY(-50%);
+  }
+
+  .section-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+  }
+
+  .section-desc {
+    font-size: 16px;
+    color: var(--gray-light);
+    line-height: 1.6;
+  }
+
+  /* ===== METHOD (1 MES EM 1 DIA) ===== */
+  .method {
+    background: var(--dark);
+    border-top: 1px solid var(--dark-border);
+    border-bottom: 1px solid var(--dark-border);
+    overflow: hidden;
+  }
+
+  .method-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .method-visual {
+    position: relative;
+    aspect-ratio: 1;
+    max-width: 500px;
+  }
+
+  .method-circle-outer {
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(94,207,201,0.15);
+    border-radius: 50%;
+    animation: spin-slow 30s linear infinite;
+  }
+
+  .method-circle-outer::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background: var(--cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--cyan);
+  }
+
+  .method-circle-inner {
+    position: absolute;
+    inset: 40px;
+    border: 1px dashed rgba(107,45,139,0.3);
+    border-radius: 50%;
+    animation: spin-slow 20s linear infinite reverse;
+  }
+
+  .method-center {
+    position: absolute;
+    inset: 80px;
+    background: linear-gradient(135deg, rgba(107,45,139,0.15), rgba(94,207,201,0.08));
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(94,207,201,0.1);
+  }
+
+  .method-center .big {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(48px, 6vw, 80px);
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--cyan), var(--purple-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+  }
+
+  .method-center .sub {
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--gray-light);
+    margin-top: 4px;
+  }
+
+  /* orbit items */
+  .orbit-item {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    background: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+
+  .orbit-item:nth-child(1) { top: -10px; left: 50%; transform: translateX(-50%); }
+  .orbit-item:nth-child(2) { top: 50%; right: -10px; transform: translateY(-50%); }
+  .orbit-item:nth-child(3) { bottom: -10px; left: 50%; transform: translateX(-50%); }
+  .orbit-item:nth-child(4) { top: 50%; left: -10px; transform: translateY(-50%); }
+
+  @keyframes spin-slow { to { transform: rotate(360deg); } }
+
+  .method-text h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+  }
+
+  .method-text h2 .gradient {
+    background: linear-gradient(135deg, var(--cyan), var(--purple-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .method-text p {
+    font-size: 17px;
+    color: var(--gray-light);
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  .method-features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+
+  .method-feat {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .method-feat-icon {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    background: rgba(94,207,201,0.1);
+    border: 1px solid rgba(94,207,201,0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cyan);
+    font-size: 14px;
+  }
+
+  .method-feat-text {
+    font-size: 15px;
+    color: var(--gray-light);
+    line-height: 1.5;
+  }
+
+  .method-feat-text strong {
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  /* ===== PROCESS STEPS ===== */
+  .process {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .process-card {
+    background: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: 20px;
+    padding: 36px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+  }
+
+  .process-card:hover {
+    border-color: var(--cyan);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(94,207,201,0.08);
+  }
+
+  .process-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--purple), var(--cyan));
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .process-card:hover::before { opacity: 1; }
+
+  .process-number {
+    font-family: 'Sora', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    color: rgba(94,207,201,0.1);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .process-card h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .process-card p {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* ===== PHONE SHOWCASE (Keplay-style) ===== */
+  .showcase {
+    background: var(--dark);
+    border-top: 1px solid var(--dark-border);
+    border-bottom: 1px solid var(--dark-border);
+    overflow: hidden;
+  }
+
+  .phones-carousel {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px;
+  }
+
+  .phones-track {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    height: 580px;
+  }
+
+  .phone-item {
+    position: absolute;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  /* Inactive phones (sides) */
+  .phone-item {
+    transform: scale(0.7) translateX(0);
+    opacity: 0.35;
+    filter: blur(3px);
+    z-index: 1;
+  }
+
+  /* Active phone (center) */
+  .phone-item.active {
+    transform: scale(1) translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    z-index: 10;
+  }
+
+  /* Adjacent phones */
+  .phone-item.adjacent-left {
+    transform: scale(0.82) translateX(-60px);
+    opacity: 0.55;
+    filter: blur(1.5px);
+    z-index: 5;
+  }
+
+  .phone-item.adjacent-right {
+    transform: scale(0.82) translateX(60px);
+    opacity: 0.55;
+    filter: blur(1.5px);
+    z-index: 5;
+  }
+
+  /* Far phones */
+  .phone-item.far-left {
+    transform: scale(0.65) translateX(-40px);
+    opacity: 0.25;
+    filter: blur(4px);
+    z-index: 2;
+  }
+
+  .phone-item.far-right {
+    transform: scale(0.65) translateX(40px);
+    opacity: 0.25;
+    filter: blur(4px);
+    z-index: 2;
+  }
+
+  .phone-item.hidden-phone {
+    transform: scale(0.5);
+    opacity: 0;
+    filter: blur(8px);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .phone-frame {
+    width: 260px;
+    height: 530px;
+    background: #1a1a24;
+    border-radius: 36px;
+    border: 3px solid #2a2a3a;
+    overflow: hidden;
+    position: relative;
+    box-shadow:
+      0 25px 80px rgba(0,0,0,0.5),
+      0 0 0 1px rgba(255,255,255,0.05),
+      inset 0 0 0 1px rgba(255,255,255,0.03);
+  }
+
+  .phone-item.active .phone-frame {
+    border-color: rgba(94,207,201,0.3);
+    box-shadow:
+      0 30px 100px rgba(0,0,0,0.6),
+      0 0 60px rgba(94,207,201,0.08),
+      0 0 0 1px rgba(94,207,201,0.15);
+  }
+
+  .phone-notch {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 22px;
+    background: #0a0a10;
+    border-radius: 0 0 14px 14px;
+    z-index: 10;
+  }
+
+  .phone-screen {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 33px;
+  }
+
+  .phone-screen-content {
+    width: 100%;
+    height: 100%;
+    padding: 38px 12px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow: hidden;
+  }
+
+  /* Mock Instagram UI */
+  .mock-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2px;
+    margin-bottom: 2px;
+  }
+
+  .mock-back { font-size: 16px; opacity: 0.6; }
+  .mock-username { font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 700; }
+  .mock-dots { opacity: 0.6; font-size: 14px; }
+
+  .mock-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 4px 2px;
+  }
+
+  .mock-avatar {
+    width: 54px;
+    height: 54px;
+    min-width: 54px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    border: 2px solid rgba(255,255,255,0.15);
+  }
+
+  .mock-stats {
+    display: flex;
+    gap: 14px;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .mock-stats div {
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .mock-stats strong {
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    display: block;
+  }
+
+  .mock-stats small {
+    font-size: 9px;
+    color: var(--gray);
+  }
+
+  .mock-bio {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    padding: 0 2px;
+  }
+
+  .mock-bio strong {
+    font-family: 'Sora', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .mock-bio span {
+    font-size: 10px;
+    color: var(--gray-light);
+    line-height: 1.3;
+  }
+
+  .mock-highlights {
+    display: flex;
+    gap: 10px;
+    padding: 6px 2px;
+    overflow: hidden;
+  }
+
+  .mock-hl {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    border: 2px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  .mock-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 4px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 4px;
+  }
+
+  .mock-post {
+    aspect-ratio: 1;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .mock-post span {
+    font-family: 'Sora', sans-serif;
+    font-size: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    opacity: 0.7;
+    text-align: center;
+  }
+
+  .phone-label {
+    text-align: center;
+    margin-top: 16px;
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray-light);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .phone-item.active .phone-label {
+    opacity: 1;
+    color: var(--cyan);
+  }
+
+  /* Navigation */
+  .phone-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    transition: all 0.3s;
+  }
+
+  .phone-nav:hover {
+    background: var(--purple);
+    border-color: var(--purple);
+  }
+
+  .phone-nav-prev { left: 0; }
+  .phone-nav-next { right: 0; }
+
+  .phone-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 28px;
+  }
+
+  .phone-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .phone-dot.active {
+    background: var(--cyan);
+    width: 24px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(94,207,201,0.4);
+  }
+
+  /* ===== VIDEO SHOWCASE ===== */
+  .video-showcase {
+    background: var(--black);
+    padding-bottom: 80px;
+  }
+
+  .video-scroll {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding: 0 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+  }
+
+  .video-scroll::-webkit-scrollbar { display: none; }
+
+  .vid-card {
+    min-width: 240px;
+    max-width: 240px;
+    aspect-ratio: 9/16;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .vid-card:hover {
+    transform: scale(1.04) translateY(-6px);
+    border-color: var(--purple-light);
+    box-shadow: 0 16px 50px rgba(107,45,139,0.25);
+  }
+
+  .vid-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .vid-play {
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255,255,255,0.2);
+    transition: all 0.4s;
+    z-index: 2;
+  }
+
+  .vid-card:hover .vid-play {
+    background: var(--purple);
+    border-color: var(--purple-light);
+    transform: scale(1.15);
+    box-shadow: 0 0 30px rgba(107,45,139,0.5);
+  }
+
+  .vid-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px 16px 16px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .vid-tag {
+    font-family: 'Sora', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--cyan);
+    background: rgba(94,207,201,0.12);
+    padding: 3px 8px;
+    border-radius: 4px;
+    width: fit-content;
+  }
+
+  .vid-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  .vid-views {
+    font-size: 12px;
+    color: var(--gray);
+  }
+
+  .vid-duration {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(6px);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-family: 'Sora', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  @media (max-width: 768px) {
+    .vid-card { min-width: 200px; max-width: 200px; }
+    .video-scroll { padding: 0 20px 16px; gap: 12px; }
+  }
+
+  /* ===== RESULTS ===== */
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .result-card {
+    background: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: 20px;
+    padding: 32px 24px;
+    text-align: center;
+    transition: all 0.4s;
+  }
+
+  .result-card:hover {
+    border-color: rgba(94,207,201,0.3);
+    transform: translateY(-4px);
+  }
+
+  .result-icon {
+    width: 52px;
+    height: 52px;
+    background: rgba(94,207,201,0.08);
+    border: 1px solid rgba(94,207,201,0.15);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 22px;
+  }
+
+  .result-card h4 {
+    font-family: 'Sora', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+
+  .result-card h4 .cyan { color: var(--cyan); }
+
+  .result-card p {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.4;
+  }
+
+  /* ===== SERVICES ===== */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .service-card {
+    background: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: 20px;
+    padding: 36px 28px;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background: linear-gradient(0deg, rgba(107,45,139,0.08), transparent);
+    transition: height 0.5s;
+  }
+
+  .service-card:hover::after { height: 100%; }
+
+  .service-card:hover {
+    border-color: var(--purple-light);
+    transform: translateY(-6px);
+  }
+
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--purple), var(--purple-light));
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .service-card h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .service-card p {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ===== TESTIMONIALS ===== */
+  .testimonials {
+    background: var(--dark);
+    border-top: 1px solid var(--dark-border);
+    border-bottom: 1px solid var(--dark-border);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .testimonial-card {
+    background: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: 20px;
+    padding: 32px;
+    position: relative;
+  }
+
+  .testimonial-stars {
+    color: #FFB800;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .testimonial-card blockquote {
+    font-size: 15px;
+    color: var(--gray-light);
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .testimonial-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple), var(--cyan));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .testimonial-info .name {
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .testimonial-info .role {
+    font-size: 12px;
+    color: var(--gray);
+  }
+
+  /* ===== FAQ ===== */
+  .faq-container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--dark-border);
+  }
+
+  .faq-question {
+    width: 100%;
+    padding: 24px 0;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-family: 'Sora', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s;
+  }
+
+  .faq-question:hover { color: var(--cyan); }
+
+  .faq-icon {
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--dark-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.3s;
+    flex-shrink: 0;
+    color: var(--cyan);
+  }
+
+  .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--purple); border-color: var(--purple); }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .faq-answer-inner {
+    padding: 0 0 24px;
+    font-size: 15px;
+    color: var(--gray);
+    line-height: 1.7;
+  }
+
+  .faq-item.open .faq-answer { max-height: 300px; }
+
+  /* ===== CTA FINAL ===== */
+  .final-cta {
+    text-align: center;
+    padding: 120px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-cta-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 80% at 50% 50%, rgba(107,45,139,0.2) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 50% at 30% 80%, rgba(94,207,201,0.1) 0%, transparent 50%);
+  }
+
+  .final-cta .section-title {
+    font-size: clamp(32px, 5vw, 52px);
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .final-cta p {
+    font-size: 17px;
+    color: var(--gray-light);
+    margin-bottom: 36px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .final-cta .btn-primary { position: relative; z-index: 1; font-size: 17px; padding: 18px 44px; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    padding: 40px;
+    border-top: 1px solid var(--dark-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-logo img { height: 36px; }
+
+  .footer-info {
+    font-size: 13px;
+    color: var(--gray);
+    text-align: center;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 12px;
+  }
+
+  .footer-social a {
+    width: 40px;
+    height: 40px;
+    background: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s;
+  }
+
+  .footer-social a:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+    background: rgba(94,207,201,0.05);
+  }
+
+  /* ===== WHATSAPP FLOAT ===== */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+    transition: all 0.3s;
+    text-decoration: none;
+    animation: bounce-in 1s 1.5s ease both;
+  }
+
+  .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(37,211,102,0.5); }
+
+  .whatsapp-float svg { width: 28px; height: 28px; fill: white; }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes bounce-in {
+    0% { opacity: 0; transform: scale(0); }
+    60% { transform: scale(1.15); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1024px) {
+    .hero-split { grid-template-columns: 1fr; gap: 40px; }
+    .hero-text-side { text-align: center; order: -1; }
+    .hero-ctas { justify-content: center; }
+    .hero-stats { justify-content: center; }
+    .hero-video-side { order: 1; }
+    .hero-phone-frame { width: 240px; height: 480px; }
+    .hero-float-badge { display: none; }
+    .method-inner { grid-template-columns: 1fr; gap: 40px; }
+    .method-visual { max-width: 350px; margin: 0 auto; }
+    .process-grid { grid-template-columns: repeat(2, 1fr); }
+    .results-grid { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+    .nav-mobile-toggle { display: flex; }
+    section { padding: 60px 20px; }
+    .hero { padding: 100px 20px 60px; }
+    .hero-stats { flex-direction: column; gap: 20px; }
+    .process-grid { grid-template-columns: 1fr; }
+    .results-grid { grid-template-columns: 1fr 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .hero-ctas { flex-direction: column; align-items: center; }
+    footer { flex-direction: column; text-align: center; }
+    .phones-carousel { padding: 0 40px; }
+    .phones-track { height: 500px; }
+    .phone-frame { width: 220px; height: 450px; border-radius: 30px; }
+    .phone-screen { border-radius: 27px; }
+    .phone-nav { width: 36px; height: 36px; }
+    .phone-nav-prev { left: 4px; }
+    .phone-nav-next { right: 4px; }
+  }
+
+  @media (max-width: 480px) {
+    .results-grid { grid-template-columns: 1fr; }
+    .method-visual { max-width: 280px; }
+    .phones-carousel { padding: 0 30px; }
+    .phones-track { height: 460px; }
+    .phone-frame { width: 200px; height: 420px; border-radius: 28px; }
+    .phone-screen { border-radius: 25px; }
+    .mock-avatar { width: 42px; height: 42px; min-width: 42px; font-size: 18px; }
+    .mock-hl { width: 36px; height: 36px; min-width: 36px; font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <img src="./images/logo-branca.png" alt="BGS Marketing">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#metodo">Método</a></li>
+    <li><a href="#processo">Processo</a></li>
+    <li><a href="#portfolio">Portfólio</a></li>
+    <li><a href="#videos">Vídeos</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="https://api.whatsapp.com/send?phone=5541987050150&text=Ol%C3%A1!%20Vi%20o%20site%20da%20BGS%20e%20quero%20saber%20mais%20sobre%20o%201%20M%C3%AAs%20em%201%20Dia." class="nav-cta">Falar com a BGS</a></li>
+  </ul>
+  <button class="nav-mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-split">
+    <!-- VIDEO SIDE -->
+    <div class="hero-video-side">
+      <div class="hero-phone-frame">
+        <div class="hero-phone-notch"></div>
+        <div class="hero-phone-screen">
+          <!-- PLACEHOLDER: cole aqui o embed do seu Reels ou <video> -->
+          <div class="hero-video-placeholder">
+            <div class="hero-video-play-ring">
+              <div class="hero-video-play">
+                <svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <span class="hero-video-label">Assista o processo</span>
+            <span class="hero-video-sub">1 Mês em 1 Dia — bastidores</span>
+          </div>
+        </div>
+      </div>
+      <!-- Floating badges around the phone -->
+      <div class="hero-float-badge hfb-1">📹 Captação</div>
+      <div class="hero-float-badge hfb-2">✂️ Edição</div>
+      <div class="hero-float-badge hfb-3">📱 Publicação</div>
+    </div>
+
+    <!-- TEXT SIDE -->
+    <div class="hero-text-side">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Vagas limitadas por mês
+      </div>
+      <h1>
+        <span class="line-break">Grave <span class="highlight">1 mês</span></span>
+        <span class="line-break"><span class="highlight">de conteúdo</span></span>
+        <span class="line-break">em apenas <span class="highlight">1 dia.</span></span>
+      </h1>
+      <p class="hero-sub">
+        Chega de improvisar. A BGS vai até você, grava <strong>todos os vídeos do mês</strong> em uma única diária e entrega tudo editado, legendado e pronto pra postar.
+      </p>
+      <p class="hero-proof">
+        Já fizemos isso para mais de <span>+200 profissionais</span> em Curitiba e região.
+      </p>
+      <div class="hero-ctas">
+        <a href="https://api.whatsapp.com/send?phone=5541987050150&text=Ol%C3%A1!%20Quero%20agendar%20meu%20dia%20de%20grava%C3%A7%C3%A3o%20com%20a%20BGS." class="btn-primary">
+          <span>Quero meu dia de gravação</span>
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14m-6-6l6 6-6 6"/></svg>
+        </a>
+        <a href="#metodo" class="btn-ghost">Como funciona?</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="number">36<span class="accent">+</span></div>
+          <div class="label">Clientes ativos</div>
+        </div>
+        <div class="hero-stat">
+          <div class="number">1<span class="accent">dia</span></div>
+          <div class="label">Produção completa</div>
+        </div>
+        <div class="hero-stat">
+          <div class="number">30<span class="accent">+</span></div>
+          <div class="label">Vídeos por diária</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD SECTION -->
+<section class="method" id="metodo">
+  <div class="method-inner reveal">
+    <div class="method-visual">
+      <div class="method-circle-outer"></div>
+      <div class="method-circle-inner"></div>
+      <div class="method-center">
+        <span class="big">1:1</span>
+        <span class="sub">mês : dia</span>
+      </div>
+      <div class="orbit-item">📹</div>
+      <div class="orbit-item">✂️</div>
+      <div class="orbit-item">📱</div>
+      <div class="orbit-item">🎯</div>
+    </div>
+    <div class="method-text">
+      <div class="section-tag">Nosso Método Exclusivo</div>
+      <h2>Por que o <span class="gradient">1 Mês em 1 Dia</span> funciona?</h2>
+      <p>Enquanto outras agências te vendem slides de estratégia, a BGS aparece com câmera, luz e roteiro. Num único dia, gravamos todo o conteúdo que seu perfil precisa pro mês inteiro.</p>
+      <div class="method-features">
+        <div class="method-feat">
+          <div class="method-feat-icon">✓</div>
+          <div class="method-feat-text"><strong>Roteiros prontos antes da gravação</strong> — você só precisa ser você. A gente cuida do resto.</div>
+        </div>
+        <div class="method-feat">
+          <div class="method-feat-icon">✓</div>
+          <div class="method-feat-text"><strong>Equipe completa no seu espaço</strong> — câmera, iluminação, áudio e direção profissional.</div>
+        </div>
+        <div class="method-feat">
+          <div class="method-feat-icon">✓</div>
+          <div class="method-feat-text"><strong>Edição com legendas de retenção</strong> — cortes dinâmicos, motion graphics e formatos otimizados pra Reels.</div>
+        </div>
+        <div class="method-feat">
+          <div class="method-feat-icon">✓</div>
+          <div class="method-feat-text"><strong>Publicação e gerenciamento</strong> — cronograma estratégico com postagem nos melhores horários.</div>
+        </div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5541987050150&text=Quero%20saber%20mais%20sobre%20o%201%20M%C3%AAs%20em%201%20Dia!" class="btn-primary">
+        <span>Agendar minha diária</span>
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14m-6-6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="processo">
+  <div class="process reveal">
+    <div class="section-header">
+      <div class="section-tag">Passo a passo</div>
+      <h2 class="section-title">Do briefing ao feed.<br>Sem complicação.</h2>
+      <p class="section-desc">Um processo simples e transparente pra você focar no que importa: o seu negócio.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-card">
+        <div class="process-number">01</div>
+        <h3>Diagnóstico Estratégico</h3>
+        <p>Entendemos seu negócio, público e proposta de valor. Identificamos o que está travando seus resultados no digital.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-number">02</div>
+        <h3>Planejamento + Roteiros</h3>
+        <p>Criamos o calendário editorial, definimos as pautas e escrevemos todos os roteiros antes do dia de gravação.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-number">03</div>
+        <h3>Dia de Gravação</h3>
+        <p>Vamos até você com equipe completa. Em poucas horas, gravamos todos os vídeos do mês com qualidade cinematográfica.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-number">04</div>
+        <h3>Edição Profissional</h3>
+        <p>Cortes dinâmicos, legendas de alta retenção, motion graphics e trilha. Tudo otimizado para performance nos Reels.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-number">05</div>
+        <h3>Gerenciamento do Perfil</h3>
+        <p>Publicamos no melhor horário, cuidamos dos destaques, bio, grade e respondemos seu público de forma estratégica.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-number">06</div>
+        <h3>Relatório + Próximo Mês</h3>
+        <p>Analisamos os resultados, identificamos o que performou melhor e já planejamos a próxima diária com os aprendizados.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SHOWCASE -->
+<section class="video-showcase" id="videos">
+  <div class="section-header reveal">
+    <div class="section-tag">Produções</div>
+    <h2 class="section-title">Conteúdos que geram<br>resultado de verdade.</h2>
+    <p class="section-desc">Arrasta pro lado e veja o que a BGS produz em um único dia de gravação.</p>
+  </div>
+  <div class="video-scroll reveal">
+    <div class="vid-card">
+      <div class="vid-placeholder" style="background: linear-gradient(160deg, #3d1560 0%, #1a0a2e 100%);">
+        <div class="vid-play">
+          <svg width="22" height="22" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="vid-info">
+          <span class="vid-tag">Reels</span>
+          <span class="vid-name">Clínica Odontológica</span>
+          <span class="vid-views">24.3K views</span>
+        </div>
+        <div class="vid-duration">0:28</div>
+      </div>
+    </div>
+    <div class="vid-card">
+      <div class="vid-placeholder" style="background: linear-gradient(160deg, #2d1a08 0%, #1a0f05 100%);">
+        <div class="vid-play">
+          <svg width="22" height="22" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="vid-info">
+          <span class="vid-tag">Reels</span>
+          <span class="vid-name">Restaurante Italiano</span>
+          <span class="vid-views">18.7K views</span>
+        </div>
+        <div class="vid-duration">0:34</div>
+      </div>
+    </div>
+    <div class="vid-card">
+      <div class="vid-placeholder" style="background: linear-gradient(160deg, #0d2d3d 0%, #0a1520 100%);">
+        <div class="vid-play">
+          <svg width="22" height="22" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="vid-info">
+          <span class="vid-tag">Reels</span>
+          <span class="vid-name">Dermatologista</span>
+          <span class="vid-views">31.5K views</span>
+        </div>
+        <div class="vid-duration">0:22</div>
+      </div>
+    </div>
+    <div class="vid-card">
+      <div class="vid-placeholder" style="background: linear-gradient(160deg, #0d2d15 0%, #0a1a0d 100%);">
+        <div class="vid-play">
+          <svg width="22" height="22" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="vid-info">
+          <span class="vid-tag">Reels</span>
+          <span class="vid-name">Personal Trainer</span>
+          <span class="vid-views">42.1K views</span>
+        </div>
+        <div class="vid-duration">0:31</div>
+      </div>
+    </div>
+    <div class="vid-card">
+      <div class="vid-placeholder" style="background: linear-gradient(160deg, #2d0d2d 0%, #1a0a1a 100%);">
+        <div class="vid-play">
+          <svg width="22" height="22" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="vid-info">
+          <span class="vid-tag">Reels</span>
+          <span class="vid-name">Boutique Feminina</span>
+          <span class="vid-views">15.9K views</span>
+        </div>
+        <div class="vid-duration">0:26</div>
+      </div>
+    </div>
+    <div class="vid-card">
+      <div class="vid-placeholder" style="background: linear-gradient(160deg, #1a2d0d 0%, #0f1a08 100%);">
+        <div class="vid-play">
+          <svg width="22" height="22" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="vid-info">
+          <span class="vid-tag">Reels</span>
+          <span class="vid-name">Barbearia Premium</span>
+          <span class="vid-views">27.8K views</span>
+        </div>
+        <div class="vid-duration">0:19</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHONE SHOWCASE (Keplay-style) -->
+<section class="showcase" id="portfolio">
+  <div class="section-header reveal">
+    <div class="section-tag">Portfólio</div>
+    <h2 class="section-title">A BGS <span style="background:linear-gradient(135deg,var(--cyan),var(--purple-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent">virou o jogo</span> de<br>vários segmentos.</h2>
+    <p class="section-desc">Perfis reais de clientes que transformaram seu Instagram com o método 1 Mês em 1 Dia.</p>
+  </div>
+
+  <div class="phones-carousel reveal">
+    <div class="phones-track" id="phonesTrack">
+      <!-- Phone 1 -->
+      <div class="phone-item" data-index="0">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-screen-content" style="background: linear-gradient(180deg, #1a1a2e 0%, #0f0f1a 100%);">
+              <div class="mock-header">
+                <div class="mock-back">←</div>
+                <div class="mock-username">clinica_sorrident</div>
+                <div class="mock-dots">⋯</div>
+              </div>
+              <div class="mock-profile">
+                <div class="mock-avatar" style="background:linear-gradient(135deg,#4FC3F7,#0288D1)">🦷</div>
+                <div class="mock-stats">
+                  <div><strong>248</strong><small>posts</small></div>
+                  <div><strong>5.8K</strong><small>seguidores</small></div>
+                  <div><strong>892</strong><small>seguindo</small></div>
+                </div>
+              </div>
+              <div class="mock-bio">
+                <strong>Clínica Sorrident</strong>
+                <span>Odontologia | Implantes | Estética</span>
+                <span>📍 Curitiba, PR</span>
+                <span style="color:var(--cyan)">🔗 Agende sua consulta</span>
+              </div>
+              <div class="mock-highlights">
+                <div class="mock-hl" style="border-color:#E91E63">🏥</div>
+                <div class="mock-hl" style="border-color:#FF9800">⭐</div>
+                <div class="mock-hl" style="border-color:#4CAF50">📸</div>
+                <div class="mock-hl" style="border-color:#2196F3">💬</div>
+              </div>
+              <div class="mock-grid">
+                <div class="mock-post" style="background:linear-gradient(135deg,#1565C0,#0D47A1)"><span>3 Motivos</span></div>
+                <div class="mock-post" style="background:linear-gradient(135deg,#00838F,#006064)"><span>Implante</span></div>
+                <div class="mock-post" style="background:linear-gradient(135deg,#283593,#1A237E)"><span>Antes/Depois</span></div>
+                <div class="mock-post" style="background:linear-gradient(135deg,#1565C0,#0D47A1)"><span>Clareamento</span></div>
+                <div class="mock-post" style="background:linear-gradient(135deg,#00695C,#004D40)"><span>Dica</span></div>
+                <div class="mock-post" style="background:linear-gradient(135deg,#4527A0,#311B92)"><span>Depoimento</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-label">Clínica Odontológica</div>
+      </div>
+
+      <!-- Phone 2 -->
+      <div class="phone-item" data-index="1">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-screen-content" style="background: linear-gradient(180deg, #1e1108 0%, #0f0f1a 100%);">
+              <div class="mock-header">
+                <div class="mock-back">←</div>
+                <div class="mock-username">trattoria_bella</div>
+                <div class="mock-dots">⋯</div>
+              </div>
+              <div class="mock-profile">
+                <div class="mock-avatar" style="background:linear-gradient(135deg,#FF8A65,#D84315)">🍝</div>
+                <div class="mock-stats">
+                  <div><strong>412</strong><small>posts</small></div>
+                  <div><strong>12.3K</strong><small>seguidores</small></div>
+                  <div><strong>430</strong><small>seguindo</small></div>
+                </div>
+              </div>
+              <div class="mock-bio">
+                <strong>Trattoria Bella</strong>
+                <span>Cozinha Italiana Artesanal</span>
+                <span>📍 Batel, Curitiba</span>
+                <span style="color:#FF8A65">🔗 Reserve sua mesa</span>
+              </div>
+              <div class="mock-highlights">
+                <div class="mock-hl" style="border-color:#FF5722">🍕</div>
+                <div class="mock-hl" style="border-color:#FF9800">🍷</div>
+                <div class="mock-hl" style="border-color:#F44336">📍</div>
+                <div class="mock-hl" style="border-color:#FFC107">⭐</div>
+              </div>
+              <div class="mock-grid">
+                <div class="mock-post" style="background:linear-gradient(135deg,#BF360C,#870000)"><span>Massa Fresca</span></div>
+                <div class="mock-post" style="background:linear-gradient(135deg,#E65100,#BF360C)"><span>Chef</span></div>
+                <div class="mock-post" style="background:linear-gradient(135deg,#4E342E,#3E2723)"><span>Ambiente</span></div>
+                <div class="mock-post" style="background:linear-gradient(135deg,#D84315,#BF360C)"><span>Vinho</span></div>
+                <div class="mock-post" style="background:linear-gradient(135deg,#6D4C41,#4E342E)"><span>Sobremesa</span></div>
+                <div class="mock-post" style="background:linear-gradient(135deg,#FF6F00,#E65100)"><span>Promo</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-label">Restaurante</div>
+      </div>
+
+      <!-- Phone 3 (CENTER - featured) -->
+      <div class="phone-item active" data-index="2">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-screen-content" style="background: linear-gradient(180deg, #0d1b2a 0%, #0f0f1a 100%);">
+              <div class="mock-header">
+                <div class="mock-back">←</div>
+                <div class="mock-username">dr.fernanda_derma</div>
+                <div class="mock-dots">⋯</div>
+              </div>
+              <div class="mock-profile">
+                <div class="mock-avatar" style="background:linear-gradient(135deg,var(--cyan),#00897B)">👩‍⚕️</div>
+                <div class="mock-stats">
+                  <div><strong>186</strong><small>posts</small></div>
+                  <div><strong>8.2K</strong><small>seguidores</small></div>
+                  <div><strong>315</strong><small>seguindo</small></div>
+                </div>
+              </div>
+              <div class="mock-bio">
+                <strong>Dra. Fernanda Costa</strong>
+                <span>Dermatologista | CRM 42.891</span>
+                <span>✨ Pele saudável com ciência</span>
+                <span>📍 Curitiba, PR</span>
+                <span style="color:var(--cyan)">🔗 Agende sua consulta</span>
+              </div>
+              <div class="mock-highlights">
+                <div class="mock-hl" style="border-color:var(--cyan)">💉</div>
+                <div class="mock-hl" style="border-color:var(--purple)">✨</div>
+                <div class="mock-hl" style="border-color:#E91E63">📸</div>
+                <div class="mock-hl" style="border-color:#FF9800">❓</div>
+                <div class="mock-hl" style="border-color:#4CAF50">📍</div>
+              </div>
+              <div class="mock-grid">
+                <div class="mock-post" style="background:linear-gradient(135deg,#00695C,#004D40)"><span>Skincare</span></div>
+                <div class="mock-post" style="background:linear-gradient(135deg,var(--purple-dark),#2A1040)"><span>Botox</span></div>
+                <div class="mock-post" style="background:linear-gradient(135deg,#00838F,#006064)"><span>Dica</span></div>
+                <div class="mock-post" style="background:linear-gradient(135deg,#1B5E20,#004D40)"><span>Acne</span></div>
+                <div class="mock-post" style="background:linear-gradient(135deg,#4A148C,var(--purple-dark))"><span>Peeling</span></div>
+                <div class="mock-post" style="background:linear-gradient(135deg,#006064,#004D40)"><span>Resultado</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-label">Médica Dermatologista</div>
+      </div>
+
+      <!-- Phone 4 -->
+      <div class="phone-item" data-index="3">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-screen-content" style="background: linear-gradient(180deg, #0d1a0d 0%, #0f0f1a 100%);">
+              <div class="mock-header">
+                <div class="mock-back">←</div>
+                <div class="mock-username">coach_marcos_fit</div>
+                <div class="mock-dots">⋯</div>
+              </div>
+              <div class="mock-profile">
+                <div class="mock-avatar" style="background:linear-gradient(135deg,#66BB6A,#2E7D32)">💪</div>
+                <div class="mock-stats">
+                  <div><strong>520</strong><small>posts</small></div>
+                  <div><strong>15.1K</strong><small>seguidores</small></div>
+                  <div><strong>680</strong><small>seguindo</small></div>
+                </div>
+              </div>
+              <div class="mock-bio">
+                <strong>Marcos | Personal Trainer</strong>
+                <span>CREF 018293-G/PR</span>
+                <span>🏋️ Treino + Nutrição + Resultado</span>
+                <span>📍 Curitiba</span>
+              </div>
+              <div class="mock-highlights">
+                <div class="mock-hl" style="border-color:#4CAF50">🏋️</div>
+                <div class="mock-hl" style="border-color:#FF9800">🥗</div>
+                <div class="mock-hl" style="border-color:#F44336">📸</div>
+                <div class="mock-hl" style="border-color:#2196F3">💬</div>
+              </div>
+              <div class="mock-grid">
+                <div class="mock-post" style="background:linear-gradient(135deg,#2E7D32,#1B5E20)"><span>Treino A</span></div>
+                <div class="mock-post" style="background:linear-gradient(135deg,#33691E,#1B5E20)"><span>Antes/Depois</span></div>
+                <div class="mock-post" style="background:linear-gradient(135deg,#1B5E20,#004D40)"><span>Dica</span></div>
+                <div class="mock-post" style="background:linear-gradient(135deg,#388E3C,#2E7D32)"><span>Treino B</span></div>
+                <div class="mock-post" style="background:linear-gradient(135deg,#00695C,#004D40)"><span>Nutrição</span></div>
+                <div class="mock-post" style="background:linear-gradient(135deg,#2E7D32,#1B5E20)"><span>Motivação</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-label">Personal Trainer</div>
+      </div>
+
+      <!-- Phone 5 -->
+      <div class="phone-item" data-index="4">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-screen-content" style="background: linear-gradient(180deg, #1a0d1e 0%, #0f0f1a 100%);">
+              <div class="mock-header">
+                <div class="mock-back">←</div>
+                <div class="mock-username">stylo_boutique</div>
+                <div class="mock-dots">⋯</div>
+              </div>
+              <div class="mock-profile">
+                <div class="mock-avatar" style="background:linear-gradient(135deg,#CE93D8,#8E24AA)">👗</div>
+                <div class="mock-stats">
+                  <div><strong>340</strong><small>posts</small></div>
+                  <div><strong>9.7K</strong><small>seguidores</small></div>
+                  <div><strong>520</strong><small>seguindo</small></div>
+                </div>
+              </div>
+              <div class="mock-bio">
+                <strong>Stylo Boutique</strong>
+                <span>Moda Feminina | Curitiba</span>
+                <span>✨ Vista-se com atitude</span>
+                <span style="color:#CE93D8">🔗 Compre pelo WhatsApp</span>
+              </div>
+              <div class="mock-highlights">
+                <div class="mock-hl" style="border-color:#E91E63">👗</div>
+                <div class="mock-hl" style="border-color:#9C27B0">🛍️</div>
+                <div class="mock-hl" style="border-color:#FF9800">⭐</div>
+                <div class="mock-hl" style="border-color:#F44336">📍</div>
+              </div>
+              <div class="mock-grid">
+                <div class="mock-post" style="background:linear-gradient(135deg,#6A1B9A,#4A148C)"><span>Look 1</span></div>
+                <div class="mock-post" style="background:linear-gradient(135deg,#AD1457,#880E4F)"><span>Novidades</span></div>
+                <div class="mock-post" style="background:linear-gradient(135deg,#4A148C,#311B92)"><span>Provador</span></div>
+                <div class="mock-post" style="background:linear-gradient(135deg,#880E4F,#6A1B9A)"><span>Sale</span></div>
+                <div class="mock-post" style="background:linear-gradient(135deg,#7B1FA2,#6A1B9A)"><span>Look 2</span></div>
+                <div class="mock-post" style="background:linear-gradient(135deg,#C2185B,#AD1457)"><span>Trend</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-label">Loja de Roupas</div>
+      </div>
+    </div>
+
+    <!-- Navigation arrows -->
+    <button class="phone-nav phone-nav-prev" onclick="moveCarousel(-1)" aria-label="Anterior">
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <button class="phone-nav phone-nav-next" onclick="moveCarousel(1)" aria-label="Próximo">
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+
+    <!-- Dots -->
+    <div class="phone-dots">
+      <span class="phone-dot" onclick="goToSlide(0)"></span>
+      <span class="phone-dot" onclick="goToSlide(1)"></span>
+      <span class="phone-dot active" onclick="goToSlide(2)"></span>
+      <span class="phone-dot" onclick="goToSlide(3)"></span>
+      <span class="phone-dot" onclick="goToSlide(4)"></span>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:48px" class="reveal">
+    <a href="https://api.whatsapp.com/send?phone=5541987050150&text=Quero%20transformar%20meu%20Instagram%20como%20esses%20perfis!" class="btn-primary">
+      <span>Quero resultados assim</span>
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14m-6-6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</section>
+
+
+<!-- RESULTS -->
+<section>
+  <div class="reveal">
+    <div class="section-header">
+      <div class="section-tag">Resultados</div>
+      <h2 class="section-title">Números que falam<br>por si só.</h2>
+    </div>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-icon">📈</div>
+        <h4>36<span class="cyan">+</span></h4>
+        <p>Clientes ativos gerenciados simultaneamente</p>
+      </div>
+      <div class="result-card">
+        <div class="result-icon">🎬</div>
+        <h4>500<span class="cyan">+</span></h4>
+        <p>Vídeos produzidos e entregues por mês</p>
+      </div>
+      <div class="result-card">
+        <div class="result-icon">⚡</div>
+        <h4>1<span class="cyan">dia</span></h4>
+        <p>Toda a produção do mês gravada em uma diária</p>
+      </div>
+      <div class="result-card">
+        <div class="result-icon">🏆</div>
+        <h4>8<span class="cyan">anos</span></h4>
+        <p>No mercado de marketing digital em Curitiba</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="servicos">
+  <div class="reveal">
+    <div class="section-header">
+      <div class="section-tag">Serviços</div>
+      <h2 class="section-title">Tudo que sua marca<br>precisa pra crescer.</h2>
+      <p class="section-desc">Mais do que vídeo. A BGS é sua parceira de crescimento digital.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">📹</div>
+        <h3>Produção de Vídeo</h3>
+        <p>Captação profissional com roteiro, iluminação, áudio e edição de alta retenção. Seu conteúdo com qualidade de TV.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📱</div>
+        <h3>Social Media</h3>
+        <p>Gestão completa do seu Instagram e Facebook com calendário editorial, copy estratégica e postagem otimizada.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎯</div>
+        <h3>Tráfego Pago</h3>
+        <p>Campanhas no Meta Ads e Google Ads com funil estratégico para gerar leads qualificados e vendas pro seu negócio.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎨</div>
+        <h3>Design & Identidade</h3>
+        <p>Criação de marca, identidade visual completa e peças gráficas para redes sociais com estética profissional.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <h3>Sites & Landing Pages</h3>
+        <p>Páginas focadas em conversão, otimizadas para SEO e com design que transmite profissionalismo e confiança.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <h3>Chatbot WhatsApp</h3>
+        <p>Atendimento automatizado com inteligência artificial via WhatsApp Business API oficial da Meta. Atenda 24h.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="reveal">
+    <div class="section-header">
+      <div class="section-tag">Depoimentos</div>
+      <h2 class="section-title">Quem fez, recomenda.</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <blockquote>"Eu não tinha tempo pra gravar conteúdo. A BGS veio aqui, gravou tudo em um dia e meu Instagram nunca teve tanta visibilidade. Virou uma máquina de novos pacientes."</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">DR</div>
+          <div class="testimonial-info">
+            <div class="name">Dr. Rafael M.</div>
+            <div class="role">Dentista — Curitiba</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <blockquote>"O diferencial é que eles não ficam enrolando com reunião de estratégia. É direto na execução. Hoje meu restaurante lota nos dias que a gente posta Reels."</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">CM</div>
+          <div class="testimonial-info">
+            <div class="name">Carolina M.</div>
+            <div class="role">Proprietária — Gastronomia</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <blockquote>"Profissionalismo absurdo. Os vídeos ficam com qualidade de Netflix. E o melhor: eu só preciso dedicar um dia do mês. O resto eles cuidam."</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AT</div>
+          <div class="testimonial-info">
+            <div class="name">André T.</div>
+            <div class="role">Médico — Dermatologia</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="reveal">
+    <div class="section-header">
+      <div class="section-tag">Dúvidas</div>
+      <h2 class="section-title">Perguntas frequentes.</h2>
+    </div>
+    <div class="faq-container">
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentNode.classList.toggle('open')">
+          <span>O que é o método "1 Mês em 1 Dia"?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">É o nosso método exclusivo de produção. A equipe da BGS vai até o seu espaço e grava todo o conteúdo de vídeo que você precisa para o mês inteiro em uma única diária. Roteiros, captação, iluminação, áudio — tudo profissional. Depois, editamos e entregamos pronto pra postar.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentNode.classList.toggle('open')">
+          <span>Quanto tempo dura o dia de gravação?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Em média, entre 3 e 5 horas, dependendo da quantidade de vídeos planejados. Tudo é organizado com antecedência para otimizar seu tempo ao máximo.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentNode.classList.toggle('open')">
+          <span>Preciso preparar algo antes da gravação?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Não. A equipe da BGS cuida de tudo: roteiros, pautas, direção e produção. Você só precisa estar disponível no dia e ser você mesmo diante da câmera.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentNode.classList.toggle('open')">
+          <span>Quantos vídeos são gravados por diária?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Normalmente entre 15 e 30+ vídeos por diária, incluindo Reels, stories e conteúdos variados. A quantidade exata depende do seu plano e do tipo de conteúdo.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentNode.classList.toggle('open')">
+          <span>Vocês atendem fora de Curitiba?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Sim! Atendemos Curitiba e toda a região metropolitana. Para cidades mais distantes, trabalhamos sob consulta com possibilidade de diárias especiais.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentNode.classList.toggle('open')">
+          <span>Qual o investimento?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Temos planos personalizados que variam de acordo com a necessidade do seu negócio. Entre em contato pelo WhatsApp para receber uma proposta sob medida.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta-bg"></div>
+  <div class="reveal">
+    <div class="section-tag" style="text-align:center;display:block;padding-left:0">
+      <span style="margin-right:8px">⚡</span> Vagas limitadas
+    </div>
+    <h2 class="section-title">Pronto pra gravar<br>seu próximo mês?</h2>
+    <p>Fale com a BGS agora e agende seu dia de gravação.<br>Seu Instagram nunca mais vai ser o mesmo.</p>
+    <a href="https://api.whatsapp.com/send?phone=5541987050150&text=Ol%C3%A1!%20Quero%20agendar%20meu%20dia%20de%20grava%C3%A7%C3%A3o%20com%20a%20BGS." class="btn-primary">
+      <span>Agendar pelo WhatsApp</span>
+      <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14m-6-6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="./images/logo-branca.png" alt="BGS Marketing">
+  </div>
+  <div class="footer-info">
+    © 2026 BGS Marketing — Curitiba, PR<br>
+    brayan@bgsmidia.com · (41) 98705-0150
+  </div>
+  <div class="footer-social">
+    <a href="https://instagram.com/bgs_mkt" target="_blank" title="Instagram">📷</a>
+    <a href="https://api.whatsapp.com/send?phone=5541987050150" target="_blank" title="WhatsApp">💬</a>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://api.whatsapp.com/send?phone=5541987050150&text=Ol%C3%A1!%20Vi%20o%20site%20da%20BGS%20e%20quero%20saber%20mais." class="whatsapp-float" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- SCRIPTS -->
+<script>
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  reveals.forEach(el => observer.observe(el));
+
+  // Counter animation
+  const counters = document.querySelectorAll('.hero-stat .number');
+  // Mobile nav
+  const style = document.createElement('style');
+  style.textContent = `
+    @media (max-width: 768px) {
+      .nav-links.mobile-open {
+        display: flex !important;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(10,10,15,0.97);
+        backdrop-filter: blur(20px);
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+        z-index: 999;
+      }
+      .nav-links.mobile-open a { font-size: 18px; color: var(--white); }
+    }
+  `;
+  document.head.appendChild(style);
+
+  // ===== PHONE CAROUSEL =====
+  let currentSlide = 2;
+  const totalSlides = 5;
+  const phones = document.querySelectorAll('.phone-item');
+  const dots = document.querySelectorAll('.phone-dot');
+
+  function getPositions() {
+    const w = window.innerWidth;
+    const spacing = w < 480 ? 180 : w < 768 ? 220 : 280;
+    return {
+      spacing,
+      positions: {
+        'far-left': -spacing * 2,
+        'adjacent-left': -spacing,
+        'active': 0,
+        'adjacent-right': spacing,
+        'far-right': spacing * 2,
+      }
+    };
+  }
+
+  function updateCarousel() {
+    const { spacing, positions } = getPositions();
+    const containerCenter = document.querySelector('.phones-track').offsetWidth / 2 - 130;
+
+    phones.forEach((phone, i) => {
+      phone.classList.remove('active', 'adjacent-left', 'adjacent-right', 'far-left', 'far-right', 'hidden-phone');
+
+      const diff = i - currentSlide;
+
+      let cls, offset;
+      if (diff === 0) { cls = 'active'; offset = positions['active']; }
+      else if (diff === -1 || (diff === totalSlides - 1)) { cls = 'adjacent-left'; offset = positions['adjacent-left']; }
+      else if (diff === 1 || (diff === -(totalSlides - 1))) { cls = 'adjacent-right'; offset = positions['adjacent-right']; }
+      else if (diff === -2 || (diff === totalSlides - 2)) { cls = 'far-left'; offset = positions['far-left']; }
+      else if (diff === 2 || (diff === -(totalSlides - 2))) { cls = 'far-right'; offset = positions['far-right']; }
+      else { cls = 'hidden-phone'; offset = 0; }
+
+      phone.classList.add(cls);
+      phone.style.left = (containerCenter + offset) + 'px';
+    });
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentSlide);
+    });
+  }
+
+  function moveCarousel(dir) {
+    currentSlide = (currentSlide + dir + totalSlides) % totalSlides;
+    updateCarousel();
+  }
+
+  function goToSlide(index) {
+    currentSlide = index;
+    updateCarousel();
+  }
+
+  // Click on phone to make it active
+  phones.forEach((phone, i) => {
+    phone.addEventListener('click', () => {
+      if (i !== currentSlide) {
+        currentSlide = i;
+        updateCarousel();
+      }
+    });
+  });
+
+  // Auto-play
+  let autoplay = setInterval(() => moveCarousel(1), 4000);
+  const carouselArea = document.querySelector('.phones-carousel');
+  if (carouselArea) {
+    carouselArea.addEventListener('mouseenter', () => clearInterval(autoplay));
+    carouselArea.addEventListener('mouseleave', () => {
+      autoplay = setInterval(() => moveCarousel(1), 4000);
+    });
+  }
+
+  // Touch support
+  let touchStartX = 0;
+  if (carouselArea) {
+    carouselArea.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    carouselArea.addEventListener('touchend', (e) => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) moveCarousel(diff > 0 ? 1 : -1);
+    }, { passive: true });
+  }
+
+  // Initialize
+  updateCarousel();
+  window.addEventListener('resize', updateCarousel);
+</script>
+
+</body>
+</html>
