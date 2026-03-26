@@ -1681,9 +1681,12 @@
       <div class="hero-phone-frame">
         <div class="hero-phone-notch"></div>
         <div class="hero-phone-screen">
-          <video autoplay muted loop playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;">
+          <video id="heroVideo" autoplay muted loop playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;">
             <source src="https://res.cloudinary.com/daztqfdvf/video/upload/q_auto,w_400,f_mp4/v1774543807/BGS_-_1_M%C3%8AS_EM_1_DIA_s1nn8i.mp4" type="video/mp4">
           </video>
+          <button id="soundToggle" onclick="toggleSound()" style="position:absolute;bottom:16px;right:16px;width:40px;height:40px;border-radius:50%;background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;transition:all 0.3s;">
+            🔇
+          </button>
         </div>
       </div>
       <!-- Floating badges around the phone -->
@@ -1827,7 +1830,7 @@
   <div class="section-header reveal">
     <div class="section-tag">Produções</div>
     <h2 class="section-title">Conteúdos que geram<br>resultado de verdade.</h2>
-    <p class="section-desc">Arrasta pro lado e veja o que a BGS produz em um único dia de gravação.</p>
+    <p class="section-desc">A partir de <strong style="color:var(--cyan)">5 vídeos mensais</strong> produzidos pela BGS. Arrasta pro lado e veja o que produzimos em um único dia de gravação.</p>
   </div>
   <div class="video-scroll reveal">
     <div class="vid-card">
@@ -2430,6 +2433,23 @@
 
 <!-- SCRIPTS -->
 <script>
+  // Sound toggle for hero video
+  function toggleSound() {
+    const video = document.getElementById('heroVideo');
+    const btn = document.getElementById('soundToggle');
+    if (video.muted) {
+      video.muted = false;
+      btn.textContent = '🔊';
+      btn.style.background = 'rgba(107,45,139,0.7)';
+      btn.style.borderColor = 'rgba(94,207,201,0.5)';
+    } else {
+      video.muted = true;
+      btn.textContent = '🔇';
+      btn.style.background = 'rgba(0,0,0,0.6)';
+      btn.style.borderColor = 'rgba(255,255,255,0.2)';
+    }
+  }
+
   // Navbar scroll effect
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
