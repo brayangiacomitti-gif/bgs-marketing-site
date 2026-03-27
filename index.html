@@ -1225,15 +1225,25 @@
   .video-scroll {
     display: flex;
     gap: 16px;
-    overflow-x: auto;
     padding: 0 40px 20px;
-    max-width: 1400px;
+    max-width: 100%;
     margin: 0 auto;
-    scrollbar-width: none;
-    scroll-snap-type: x mandatory;
+    overflow: hidden;
   }
 
-  .video-scroll::-webkit-scrollbar { display: none; }
+  .video-scroll-inner {
+    display: flex;
+    gap: 16px;
+    animation: video-marquee 30s linear infinite;
+    width: max-content;
+  }
+
+  .video-scroll-inner:hover { animation-play-state: paused; }
+
+  @keyframes video-marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
 
   .vid-card {
     min-width: 240px;
@@ -1244,7 +1254,6 @@
     position: relative;
     cursor: pointer;
     flex-shrink: 0;
-    scroll-snap-align: start;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: 1px solid rgba(255,255,255,0.06);
   }
@@ -2101,7 +2110,6 @@
   <ul class="nav-links">
     <li><a href="#metodo">Método</a></li>
     <li><a href="#processo">Processo</a></li>
-    <li><a href="#portfolio">Portfólio</a></li>
     <li><a href="#videos">Vídeos</a></li>
     <li><a href="#servicos">Serviços</a></li>
     <li><a href="/blog.html">Blog</a></li>
@@ -2382,7 +2390,8 @@
     <p class="section-desc">A partir de <strong style="color:var(--cyan)">5 vídeos mensais</strong> produzidos pela BGS. Arrasta pro lado e veja o que produzimos em um único dia de gravação.</p>
   </div>
   <div class="video-scroll reveal">
-    <div class="vid-card">
+    <div class="video-scroll-inner" id="videoMarquee">
+    <div class="vid-card" onclick="openVideoSound(this)">
       <div class="vid-placeholder" style="background:#000;overflow:hidden;">
         <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
           <source src="https://res.cloudinary.com/daztqfdvf/video/upload/q_auto,w_400,f_mp4/v1774543790/DE_VOLTA_PARA_O_FUTURO_1_ycw5yh.mp4" type="video/mp4">
@@ -2394,7 +2403,7 @@
         </div>
       </div>
     </div>
-    <div class="vid-card">
+    <div class="vid-card" onclick="openVideoSound(this)">
       <div class="vid-placeholder" style="background:#000;overflow:hidden;">
         <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
           <source src="https://res.cloudinary.com/daztqfdvf/video/upload/q_auto,w_400,f_mp4/v1774543796/MARCOL_-_CORRIGIDO_bk7lbz.mp4" type="video/mp4">
@@ -2406,7 +2415,7 @@
         </div>
       </div>
     </div>
-    <div class="vid-card">
+    <div class="vid-card" onclick="openVideoSound(this)">
       <div class="vid-placeholder" style="background:#000;overflow:hidden;">
         <video autoplay muted loop playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
           <source src="https://res.cloudinary.com/daztqfdvf/video/upload/q_auto,w_400,f_mp4/v1774554284/0326_1_go8w0p.mp4" type="video/mp4">
@@ -2418,7 +2427,7 @@
         </div>
       </div>
     </div>
-    <div class="vid-card">
+    <div class="vid-card" onclick="openVideoSound(this)">
       <div class="vid-placeholder" style="background:#000;overflow:hidden;">
         <video autoplay muted loop playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
           <source src="https://res.cloudinary.com/daztqfdvf/video/upload/q_auto,w_400,f_mp4/v1774554005/REDE_SV_-_FRENTISTA_uq1x9c.mp4" type="video/mp4">
@@ -2430,7 +2439,7 @@
         </div>
       </div>
     </div>
-    <div class="vid-card">
+    <div class="vid-card" onclick="openVideoSound(this)">
       <div class="vid-placeholder" style="background:#000;overflow:hidden;">
         <video autoplay muted loop playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
           <source src="https://res.cloudinary.com/daztqfdvf/video/upload/q_auto,w_400,f_mp4/v1774554025/TRATA_-_10-02-2025_vgg4vc.mp4" type="video/mp4">
@@ -2442,7 +2451,7 @@
         </div>
       </div>
     </div>
-    <div class="vid-card">
+    <div class="vid-card" onclick="openVideoSound(this)">
       <div class="vid-placeholder" style="background:#000;overflow:hidden;">
         <video autoplay muted loop playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
           <source src="https://res.cloudinary.com/daztqfdvf/video/upload/q_auto,w_400,f_mp4/v1774554025/CASA_DAS_LATAS_-_23-02_tpdtyq.mp4" type="video/mp4">
@@ -2454,7 +2463,7 @@
         </div>
       </div>
     </div>
-    <div class="vid-card">
+    <div class="vid-card" onclick="openVideoSound(this)">
       <div class="vid-placeholder" style="background:#000;overflow:hidden;">
         <video autoplay muted loop playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
           <source src="https://res.cloudinary.com/daztqfdvf/video/upload/q_auto,w_400,f_mp4/v1774554005/VAGAS_ABERTAS_qxprek.mp4" type="video/mp4">
@@ -2466,7 +2475,7 @@
         </div>
       </div>
     </div>
-    <div class="vid-card">
+    <div class="vid-card" onclick="openVideoSound(this)">
       <div class="vid-placeholder" style="background:#000;overflow:hidden;">
         <video autoplay muted loop playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
           <source src="https://res.cloudinary.com/daztqfdvf/video/upload/q_auto,w_400,f_mp4/v1774553989/Manu_-_%C3%81gere_v6ycbt.mp4" type="video/mp4">
@@ -2478,7 +2487,7 @@
         </div>
       </div>
     </div>
-    <div class="vid-card">
+    <div class="vid-card" onclick="openVideoSound(this)">
       <div class="vid-placeholder" style="background:#000;overflow:hidden;">
         <video autoplay muted loop playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
           <source src="https://res.cloudinary.com/daztqfdvf/video/upload/q_auto,w_400,f_mp4/v1774553992/GIACOMITTI_-_OK_yswosw.mp4" type="video/mp4">
@@ -2490,275 +2499,9 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- PHONE SHOWCASE (Keplay-style) -->
-<section class="showcase" id="portfolio">
-  <div class="section-header reveal">
-    <div class="section-tag">Portfólio</div>
-    <h2 class="section-title">A BGS <span style="background:linear-gradient(135deg,var(--cyan),var(--purple-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent">virou o jogo</span> de<br>vários segmentos.</h2>
-    <p class="section-desc">Perfis reais de clientes que transformaram seu Instagram com o método 1 Mês em 1 Dia.</p>
-  </div>
-
-  <div class="phones-carousel reveal">
-    <div class="phones-track" id="phonesTrack">
-      <!-- Phone 1 -->
-      <div class="phone-item" data-index="0">
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <div class="phone-screen-content" style="background: linear-gradient(180deg, #1a1a2e 0%, #0f0f1a 100%);">
-              <div class="mock-header">
-                <div class="mock-back">←</div>
-                <div class="mock-username">clinica_sorrident</div>
-                <div class="mock-dots">⋯</div>
-              </div>
-              <div class="mock-profile">
-                <div class="mock-avatar" style="background:linear-gradient(135deg,#4FC3F7,#0288D1)">🦷</div>
-                <div class="mock-stats">
-                  <div><strong>248</strong><small>posts</small></div>
-                  <div><strong>5.8K</strong><small>seguidores</small></div>
-                  <div><strong>892</strong><small>seguindo</small></div>
-                </div>
-              </div>
-              <div class="mock-bio">
-                <strong>Clínica Sorrident</strong>
-                <span>Odontologia | Implantes | Estética</span>
-                <span>📍 Curitiba, PR</span>
-                <span style="color:var(--cyan)">🔗 Agende sua consulta</span>
-              </div>
-              <div class="mock-highlights">
-                <div class="mock-hl" style="border-color:#E91E63">🏥</div>
-                <div class="mock-hl" style="border-color:#FF9800">⭐</div>
-                <div class="mock-hl" style="border-color:#4CAF50">📸</div>
-                <div class="mock-hl" style="border-color:#2196F3">💬</div>
-              </div>
-              <div class="mock-grid">
-                <div class="mock-post" style="background:linear-gradient(135deg,#1565C0,#0D47A1)"><span>3 Motivos</span></div>
-                <div class="mock-post" style="background:linear-gradient(135deg,#00838F,#006064)"><span>Implante</span></div>
-                <div class="mock-post" style="background:linear-gradient(135deg,#283593,#1A237E)"><span>Antes/Depois</span></div>
-                <div class="mock-post" style="background:linear-gradient(135deg,#1565C0,#0D47A1)"><span>Clareamento</span></div>
-                <div class="mock-post" style="background:linear-gradient(135deg,#00695C,#004D40)"><span>Dica</span></div>
-                <div class="mock-post" style="background:linear-gradient(135deg,#4527A0,#311B92)"><span>Depoimento</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="phone-label">Clínica Odontológica</div>
-      </div>
-
-      <!-- Phone 2 -->
-      <div class="phone-item" data-index="1">
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <div class="phone-screen-content" style="background: linear-gradient(180deg, #1e1108 0%, #0f0f1a 100%);">
-              <div class="mock-header">
-                <div class="mock-back">←</div>
-                <div class="mock-username">trattoria_bella</div>
-                <div class="mock-dots">⋯</div>
-              </div>
-              <div class="mock-profile">
-                <div class="mock-avatar" style="background:linear-gradient(135deg,#FF8A65,#D84315)">🍝</div>
-                <div class="mock-stats">
-                  <div><strong>412</strong><small>posts</small></div>
-                  <div><strong>12.3K</strong><small>seguidores</small></div>
-                  <div><strong>430</strong><small>seguindo</small></div>
-                </div>
-              </div>
-              <div class="mock-bio">
-                <strong>Trattoria Bella</strong>
-                <span>Cozinha Italiana Artesanal</span>
-                <span>📍 Batel, Curitiba</span>
-                <span style="color:#FF8A65">🔗 Reserve sua mesa</span>
-              </div>
-              <div class="mock-highlights">
-                <div class="mock-hl" style="border-color:#FF5722">🍕</div>
-                <div class="mock-hl" style="border-color:#FF9800">🍷</div>
-                <div class="mock-hl" style="border-color:#F44336">📍</div>
-                <div class="mock-hl" style="border-color:#FFC107">⭐</div>
-              </div>
-              <div class="mock-grid">
-                <div class="mock-post" style="background:linear-gradient(135deg,#BF360C,#870000)"><span>Massa Fresca</span></div>
-                <div class="mock-post" style="background:linear-gradient(135deg,#E65100,#BF360C)"><span>Chef</span></div>
-                <div class="mock-post" style="background:linear-gradient(135deg,#4E342E,#3E2723)"><span>Ambiente</span></div>
-                <div class="mock-post" style="background:linear-gradient(135deg,#D84315,#BF360C)"><span>Vinho</span></div>
-                <div class="mock-post" style="background:linear-gradient(135deg,#6D4C41,#4E342E)"><span>Sobremesa</span></div>
-                <div class="mock-post" style="background:linear-gradient(135deg,#FF6F00,#E65100)"><span>Promo</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="phone-label">Restaurante</div>
-      </div>
-
-      <!-- Phone 3 (CENTER - featured) -->
-      <div class="phone-item active" data-index="2">
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <div class="phone-screen-content" style="background: linear-gradient(180deg, #0d1b2a 0%, #0f0f1a 100%);">
-              <div class="mock-header">
-                <div class="mock-back">←</div>
-                <div class="mock-username">dr.fernanda_derma</div>
-                <div class="mock-dots">⋯</div>
-              </div>
-              <div class="mock-profile">
-                <div class="mock-avatar" style="background:linear-gradient(135deg,var(--cyan),#00897B)">👩‍⚕️</div>
-                <div class="mock-stats">
-                  <div><strong>186</strong><small>posts</small></div>
-                  <div><strong>8.2K</strong><small>seguidores</small></div>
-                  <div><strong>315</strong><small>seguindo</small></div>
-                </div>
-              </div>
-              <div class="mock-bio">
-                <strong>Dra. Fernanda Costa</strong>
-                <span>Dermatologista | CRM 42.891</span>
-                <span>✨ Pele saudável com ciência</span>
-                <span>📍 Curitiba, PR</span>
-                <span style="color:var(--cyan)">🔗 Agende sua consulta</span>
-              </div>
-              <div class="mock-highlights">
-                <div class="mock-hl" style="border-color:var(--cyan)">💉</div>
-                <div class="mock-hl" style="border-color:var(--purple)">✨</div>
-                <div class="mock-hl" style="border-color:#E91E63">📸</div>
-                <div class="mock-hl" style="border-color:#FF9800">❓</div>
-                <div class="mock-hl" style="border-color:#4CAF50">📍</div>
-              </div>
-              <div class="mock-grid">
-                <div class="mock-post" style="background:linear-gradient(135deg,#00695C,#004D40)"><span>Skincare</span></div>
-                <div class="mock-post" style="background:linear-gradient(135deg,var(--purple-dark),#2A1040)"><span>Botox</span></div>
-                <div class="mock-post" style="background:linear-gradient(135deg,#00838F,#006064)"><span>Dica</span></div>
-                <div class="mock-post" style="background:linear-gradient(135deg,#1B5E20,#004D40)"><span>Acne</span></div>
-                <div class="mock-post" style="background:linear-gradient(135deg,#4A148C,var(--purple-dark))"><span>Peeling</span></div>
-                <div class="mock-post" style="background:linear-gradient(135deg,#006064,#004D40)"><span>Resultado</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="phone-label">Médica Dermatologista</div>
-      </div>
-
-      <!-- Phone 4 -->
-      <div class="phone-item" data-index="3">
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <div class="phone-screen-content" style="background: linear-gradient(180deg, #0d1a0d 0%, #0f0f1a 100%);">
-              <div class="mock-header">
-                <div class="mock-back">←</div>
-                <div class="mock-username">coach_marcos_fit</div>
-                <div class="mock-dots">⋯</div>
-              </div>
-              <div class="mock-profile">
-                <div class="mock-avatar" style="background:linear-gradient(135deg,#66BB6A,#2E7D32)">💪</div>
-                <div class="mock-stats">
-                  <div><strong>520</strong><small>posts</small></div>
-                  <div><strong>15.1K</strong><small>seguidores</small></div>
-                  <div><strong>680</strong><small>seguindo</small></div>
-                </div>
-              </div>
-              <div class="mock-bio">
-                <strong>Marcos | Personal Trainer</strong>
-                <span>CREF 018293-G/PR</span>
-                <span>🏋️ Treino + Nutrição + Resultado</span>
-                <span>📍 Curitiba</span>
-              </div>
-              <div class="mock-highlights">
-                <div class="mock-hl" style="border-color:#4CAF50">🏋️</div>
-                <div class="mock-hl" style="border-color:#FF9800">🥗</div>
-                <div class="mock-hl" style="border-color:#F44336">📸</div>
-                <div class="mock-hl" style="border-color:#2196F3">💬</div>
-              </div>
-              <div class="mock-grid">
-                <div class="mock-post" style="background:linear-gradient(135deg,#2E7D32,#1B5E20)"><span>Treino A</span></div>
-                <div class="mock-post" style="background:linear-gradient(135deg,#33691E,#1B5E20)"><span>Antes/Depois</span></div>
-                <div class="mock-post" style="background:linear-gradient(135deg,#1B5E20,#004D40)"><span>Dica</span></div>
-                <div class="mock-post" style="background:linear-gradient(135deg,#388E3C,#2E7D32)"><span>Treino B</span></div>
-                <div class="mock-post" style="background:linear-gradient(135deg,#00695C,#004D40)"><span>Nutrição</span></div>
-                <div class="mock-post" style="background:linear-gradient(135deg,#2E7D32,#1B5E20)"><span>Motivação</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="phone-label">Personal Trainer</div>
-      </div>
-
-      <!-- Phone 5 -->
-      <div class="phone-item" data-index="4">
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <div class="phone-screen-content" style="background: linear-gradient(180deg, #1a0d1e 0%, #0f0f1a 100%);">
-              <div class="mock-header">
-                <div class="mock-back">←</div>
-                <div class="mock-username">stylo_boutique</div>
-                <div class="mock-dots">⋯</div>
-              </div>
-              <div class="mock-profile">
-                <div class="mock-avatar" style="background:linear-gradient(135deg,#CE93D8,#8E24AA)">👗</div>
-                <div class="mock-stats">
-                  <div><strong>340</strong><small>posts</small></div>
-                  <div><strong>9.7K</strong><small>seguidores</small></div>
-                  <div><strong>520</strong><small>seguindo</small></div>
-                </div>
-              </div>
-              <div class="mock-bio">
-                <strong>Stylo Boutique</strong>
-                <span>Moda Feminina | Curitiba</span>
-                <span>✨ Vista-se com atitude</span>
-                <span style="color:#CE93D8">🔗 Compre pelo WhatsApp</span>
-              </div>
-              <div class="mock-highlights">
-                <div class="mock-hl" style="border-color:#E91E63">👗</div>
-                <div class="mock-hl" style="border-color:#9C27B0">🛍️</div>
-                <div class="mock-hl" style="border-color:#FF9800">⭐</div>
-                <div class="mock-hl" style="border-color:#F44336">📍</div>
-              </div>
-              <div class="mock-grid">
-                <div class="mock-post" style="background:linear-gradient(135deg,#6A1B9A,#4A148C)"><span>Look 1</span></div>
-                <div class="mock-post" style="background:linear-gradient(135deg,#AD1457,#880E4F)"><span>Novidades</span></div>
-                <div class="mock-post" style="background:linear-gradient(135deg,#4A148C,#311B92)"><span>Provador</span></div>
-                <div class="mock-post" style="background:linear-gradient(135deg,#880E4F,#6A1B9A)"><span>Sale</span></div>
-                <div class="mock-post" style="background:linear-gradient(135deg,#7B1FA2,#6A1B9A)"><span>Look 2</span></div>
-                <div class="mock-post" style="background:linear-gradient(135deg,#C2185B,#AD1457)"><span>Trend</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="phone-label">Loja de Roupas</div>
-      </div>
-    </div>
-
-    <!-- Navigation arrows -->
-    <button class="phone-nav phone-nav-prev" onclick="moveCarousel(-1)" aria-label="Anterior">
-      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 19l-7-7 7-7"/></svg>
-    </button>
-    <button class="phone-nav phone-nav-next" onclick="moveCarousel(1)" aria-label="Próximo">
-      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg>
-    </button>
-
-    <!-- Dots -->
-    <div class="phone-dots">
-      <span class="phone-dot" onclick="goToSlide(0)"></span>
-      <span class="phone-dot" onclick="goToSlide(1)"></span>
-      <span class="phone-dot active" onclick="goToSlide(2)"></span>
-      <span class="phone-dot" onclick="goToSlide(3)"></span>
-      <span class="phone-dot" onclick="goToSlide(4)"></span>
     </div>
   </div>
-
-  <div style="text-align:center;margin-top:48px" class="reveal">
-    <a href="https://api.whatsapp.com/send?phone=5541987050150&text=Quero%20transformar%20meu%20Instagram%20como%20esses%20perfis!" class="btn-primary">
-      <span>Quero resultados assim</span>
-      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14m-6-6l6 6-6 6"/></svg>
-    </a>
-  </div>
 </section>
-
-
-<!-- SERVICES -->
 <section id="servicos">
   <div class="reveal">
     <div class="section-header">
@@ -3183,6 +2926,47 @@
   // Initialize
   updateCarousel();
   window.addEventListener('resize', updateCarousel);
+
+  // ===== VIDEO MARQUEE - DUPLICATE CARDS FOR INFINITE LOOP =====
+  const videoMarquee = document.getElementById('videoMarquee');
+  if (videoMarquee) {
+    const cards = videoMarquee.innerHTML;
+    videoMarquee.innerHTML = cards + cards; // duplicate for seamless loop
+  }
+
+  // ===== CLICK VIDEO TO OPEN WITH SOUND =====
+  function openVideoSound(card) {
+    const video = card.querySelector('video');
+    if (!video) return;
+    
+    // Create fullscreen overlay
+    const overlay = document.createElement('div');
+    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:10000;display:flex;align-items:center;justify-content:center;cursor:pointer;';
+    
+    const newVideo = document.createElement('video');
+    newVideo.src = video.querySelector('source').src;
+    newVideo.style.cssText = 'max-width:90vw;max-height:85vh;border-radius:16px;';
+    newVideo.controls = true;
+    newVideo.autoplay = true;
+    newVideo.loop = true;
+    newVideo.muted = false; // WITH SOUND!
+    newVideo.playsInline = true;
+    
+    const closeBtn = document.createElement('div');
+    closeBtn.innerHTML = '✕';
+    closeBtn.style.cssText = 'position:absolute;top:20px;right:20px;width:44px;height:44px;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:20px;cursor:pointer;z-index:10001;';
+    
+    overlay.appendChild(newVideo);
+    overlay.appendChild(closeBtn);
+    document.body.appendChild(overlay);
+    document.body.style.overflow = 'hidden';
+    
+    newVideo.play();
+    
+    closeBtn.onclick = (e) => { e.stopPropagation(); overlay.remove(); document.body.style.overflow = ''; };
+    overlay.onclick = () => { overlay.remove(); document.body.style.overflow = ''; };
+    newVideo.onclick = (e) => e.stopPropagation();
+  }
 </script>
 
 </body>
