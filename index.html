@@ -14,7 +14,7 @@
 <link rel="canonical" href="https://bgsmarketing.com.br">
 <meta property="og:title" content="BGS Marketing | Produção de Vídeo e Marketing Digital em Curitiba">
 <meta property="og:description" content="Grave 1 mês de conteúdo profissional em apenas 1 dia. Agência completa: vídeo, social media, tráfego pago, drone e cobertura de eventos em Curitiba.">
-<meta property="og:image" content="https://res.cloudinary.com/daztqfdvf/image/upload/q_auto,f_auto/v1774556083/BGS_Marketing_1_mr1rs2.png">
+<meta property="og:image" content="https://res.cloudinary.com/daztqfdvf/image/upload/v1774556084/BGS_Marketing_icnjwy.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bgsmarketing.com.br">
 <meta property="og:locale" content="pt_BR">
@@ -1600,6 +1600,113 @@
     .equip-item { min-width: 80px; padding: 12px 14px; }
   }
 
+  /* ===== AI SECTION ===== */
+  .ai-section {
+    background: linear-gradient(180deg, var(--black) 0%, rgba(107,45,139,0.08) 50%, var(--black) 100%);
+    border-top: 1px solid rgba(107,45,139,0.2);
+    border-bottom: 1px solid rgba(107,45,139,0.2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(107,45,139,0.06) 60deg, transparent 120deg, rgba(94,207,201,0.04) 180deg, transparent 240deg, rgba(107,45,139,0.06) 300deg, transparent 360deg);
+    animation: rotate-gradient 20s linear infinite;
+  }
+
+  .ai-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .ai-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(107,45,139,0.15);
+    border: 1px solid rgba(107,45,139,0.3);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--purple-light);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    animation: pulse-live 2s ease infinite;
+  }
+
+  .ai-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 16px;
+  }
+
+  .ai-title .ai-gradient {
+    background: linear-gradient(135deg, #B06CFF, var(--cyan), #FF6BE6, var(--purple-light));
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: ai-shimmer 4s ease infinite;
+  }
+
+  @keyframes ai-shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  .ai-desc {
+    font-size: 16px;
+    color: var(--gray-light);
+    max-width: 650px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+  }
+
+  .ai-capabilities {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+
+  .ai-cap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;
+    background: rgba(107,45,139,0.08);
+    border: 1px solid rgba(107,45,139,0.15);
+    border-radius: 14px;
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+    transition: all 0.3s;
+  }
+
+  .ai-cap:hover {
+    border-color: var(--purple-light);
+    background: rgba(107,45,139,0.15);
+    transform: translateY(-2px);
+  }
+
+  .ai-cap-icon { font-size: 22px; }
+
   /* ===== RESULTS ===== */
   .results-grid {
     display: grid;
@@ -2382,6 +2489,80 @@
   </div>
 </section>
 
+<!-- AI EXPERTISE SECTION -->
+<section style="padding:80px 40px;background:linear-gradient(180deg,var(--black) 0%,rgba(107,45,139,0.06) 50%,var(--black) 100%);border-top:1px solid var(--dark-border);border-bottom:1px solid var(--dark-border);overflow:hidden">
+  <div class="reveal" style="max-width:1100px;margin:0 auto;text-align:center">
+    <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(107,45,139,0.12);border:1px solid rgba(107,45,139,0.25);border-radius:30px;padding:6px 18px;margin-bottom:20px">
+      <span style="font-size:18px">🤖</span>
+      <span style="font-family:Sora;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--purple-light)">Inteligência Artificial Aplicada</span>
+    </div>
+    <h2 style="font-family:Sora;font-size:clamp(28px,4vw,44px);font-weight:800;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px">
+      Conteúdo potencializado<br>
+      <span style="background:linear-gradient(135deg,var(--purple-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent">por Inteligência Artificial.</span>
+    </h2>
+    <p style="font-size:17px;color:var(--gray-light);max-width:650px;margin:0 auto 40px;line-height:1.7">A BGS é especialista em criar conteúdo híbrido combinando produção real com IA. Vídeos, fotos, animações, mascotes e personagens — tudo gerado e editado com as tecnologias mais avançadas do mercado.</p>
+    
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-bottom:40px">
+      <div style="background:var(--dark-card);border:1px solid var(--dark-border);border-radius:14px;padding:20px 24px;min-width:140px;transition:all 0.3s;text-align:center">
+        <div style="font-size:32px;margin-bottom:8px">🎬</div>
+        <div style="font-family:Sora;font-size:13px;font-weight:700;color:var(--white)">Vídeos com IA</div>
+        <div style="font-size:11px;color:var(--gray);margin-top:4px">Híbrido real + gerado</div>
+      </div>
+      <div style="background:var(--dark-card);border:1px solid var(--dark-border);border-radius:14px;padding:20px 24px;min-width:140px;transition:all 0.3s;text-align:center">
+        <div style="font-size:32px;margin-bottom:8px">📸</div>
+        <div style="font-family:Sora;font-size:13px;font-weight:700;color:var(--white)">Fotos com IA</div>
+        <div style="font-size:11px;color:var(--gray);margin-top:4px">Cenários e composições</div>
+      </div>
+      <div style="background:var(--dark-card);border:1px solid var(--dark-border);border-radius:14px;padding:20px 24px;min-width:140px;transition:all 0.3s;text-align:center">
+        <div style="font-size:32px;margin-bottom:8px">✨</div>
+        <div style="font-family:Sora;font-size:13px;font-weight:700;color:var(--white)">Animações</div>
+        <div style="font-size:11px;color:var(--gray);margin-top:4px">Motion design inteligente</div>
+      </div>
+      <div style="background:var(--dark-card);border:1px solid var(--dark-border);border-radius:14px;padding:20px 24px;min-width:140px;transition:all 0.3s;text-align:center">
+        <div style="font-size:32px;margin-bottom:8px">🎭</div>
+        <div style="font-family:Sora;font-size:13px;font-weight:700;color:var(--white)">Mascotes</div>
+        <div style="font-size:11px;color:var(--gray);margin-top:4px">Personagens exclusivos</div>
+      </div>
+      <div style="background:var(--dark-card);border:1px solid var(--dark-border);border-radius:14px;padding:20px 24px;min-width:140px;transition:all 0.3s;text-align:center">
+        <div style="font-size:32px;margin-bottom:8px">🖼️</div>
+        <div style="font-family:Sora;font-size:13px;font-weight:700;color:var(--white)">Carrosséis</div>
+        <div style="font-size:11px;color:var(--gray);margin-top:4px">Design + IA generativa</div>
+      </div>
+      <div style="background:var(--dark-card);border:1px solid var(--dark-border);border-radius:14px;padding:20px 24px;min-width:140px;transition:all 0.3s;text-align:center">
+        <div style="font-size:32px;margin-bottom:8px">🧠</div>
+        <div style="font-family:Sora;font-size:13px;font-weight:700;color:var(--white)">Estratégia</div>
+        <div style="font-size:11px;color:var(--gray);margin-top:4px">IA aplicada a Reels</div>
+      </div>
+    </div>
+
+    <div style="display:inline-flex;align-items:center;gap:12px;background:rgba(94,207,201,0.06);border:1px solid rgba(94,207,201,0.15);border-radius:14px;padding:16px 28px">
+      <span style="font-size:24px">⚡</span>
+      <span style="font-family:Sora;font-size:14px;font-weight:600;color:var(--cyan)">Somos uma das poucas agências em Curitiba que domina IA aplicada a conteúdo</span>
+    </div>
+  </div>
+</section>
+
+<!-- AI CONTENT SECTION -->
+<section class="ai-section">
+  <div class="ai-inner reveal">
+    <div class="ai-badge">🤖 Inteligência Artificial Aplicada</div>
+    <h2 class="ai-title">Conteúdo potencializado<br>com <span class="ai-gradient">Inteligência Artificial.</span></h2>
+    <p class="ai-desc">A BGS é pioneira em Curitiba na criação de <strong style="color:var(--white)">conteúdo híbrido com IA</strong>. Combinamos captação profissional com inteligência artificial pra criar vídeos, fotos, animações e materiais que nenhuma outra agência entrega.</p>
+    <div class="ai-capabilities">
+      <div class="ai-cap"><span class="ai-cap-icon">🎬</span> Vídeos com IA</div>
+      <div class="ai-cap"><span class="ai-cap-icon">📸</span> Fotos geradas por IA</div>
+      <div class="ai-cap"><span class="ai-cap-icon">✨</span> Animações inteligentes</div>
+      <div class="ai-cap"><span class="ai-cap-icon">🎭</span> Mascotes e personagens</div>
+      <div class="ai-cap"><span class="ai-cap-icon">🖼️</span> Artes e carrosséis com IA</div>
+      <div class="ai-cap"><span class="ai-cap-icon">📝</span> Roteiros assistidos por IA</div>
+    </div>
+    <a href="https://api.whatsapp.com/send?phone=5541987050150&text=Quero%20saber%20sobre%20conteúdo%20com%20IA!" class="btn-primary" style="margin:0 auto;display:inline-flex">
+      <span>Quero conteúdo com IA</span>
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14m-6-6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</section>
+
 <!-- VIDEO SHOWCASE -->
 <section class="video-showcase" id="videos">
   <div class="section-header reveal">
@@ -2499,10 +2680,33 @@
         </div>
       </div>
     </div>
+    <div class="vid-card" onclick="openVideoSound(this)">
+      <div class="vid-placeholder" style="background:#000;overflow:hidden;">
+        <video autoplay muted loop playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
+          <source src="https://res.cloudinary.com/daztqfdvf/video/upload/q_auto,w_400,f_mp4/v1774621313/MADEMAPE_chrjeu.mp4" type="video/mp4">
+        </video>
+        <div class="vid-info">
+          <span class="vid-tag" style="background:rgba(107,45,139,0.2);border-color:rgba(107,45,139,0.3);color:var(--purple-light)">🤖 IA</span>
+          <span class="vid-name">Mademape Madeiras</span>
+          <span class="vid-views">Vídeo híbrido com IA</span>
+        </div>
+      </div>
+    </div>
+    <div class="vid-card" onclick="openVideoSound(this)">
+      <div class="vid-placeholder" style="background:#000;overflow:hidden;">
+        <video autoplay muted loop playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
+          <source src="https://res.cloudinary.com/daztqfdvf/video/upload/q_auto,w_400,f_mp4/v1774621348/0316_1_yg8eld.mp4" type="video/mp4">
+        </video>
+        <div class="vid-info">
+          <span class="vid-tag" style="background:rgba(107,45,139,0.2);border-color:rgba(107,45,139,0.3);color:var(--purple-light)">🤖 IA</span>
+          <span class="vid-name">Casa das Latas Colombo</span>
+          <span class="vid-views">Vídeo híbrido com IA</span>
+        </div>
+      </div>
+    </div>
     </div>
   </div>
 </section>
-<section id="servicos">
   <div class="reveal">
     <div class="section-header">
       <div class="section-tag">Serviços</div>
