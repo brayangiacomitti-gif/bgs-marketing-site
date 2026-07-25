@@ -259,6 +259,123 @@
     .ia-feature { flex-direction: column; align-items: center; text-align: center; }
     .step-number { width: 48px; height: 48px; font-size: 16px; }
   }
+
+  /* ===== PORTFÓLIO DE VÍDEOS NO TOPO ===== */
+  .cc-showcase {
+    padding: 72px 0 80px;
+    background: linear-gradient(180deg, #0d0d13 0%, #111118 100%);
+    border-bottom: 1px solid var(--dark-border);
+    overflow: hidden;
+  }
+  .cc-showcase-head {
+    max-width: 1200px;
+    margin: 0 auto 32px;
+    padding: 0 40px;
+  }
+  .cc-showcase-head h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(28px, 4vw, 46px);
+    line-height: 1.08;
+    margin: 10px 0 12px;
+  }
+  .cc-showcase-head p {
+    color: var(--gray-light);
+    max-width: 680px;
+    line-height: 1.65;
+  }
+  .cc-video-rail {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(230px, 285px);
+    gap: 18px;
+    overflow-x: auto;
+    padding: 0 max(40px, calc((100vw - 1200px) / 2));
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold) transparent;
+  }
+  .cc-video-card {
+    position: relative;
+    height: 510px;
+    border-radius: 22px;
+    overflow: hidden;
+    scroll-snap-align: start;
+    background: #08080c;
+    border: 1px solid rgba(255,255,255,.1);
+    box-shadow: 0 18px 50px rgba(0,0,0,.35);
+    cursor: pointer;
+  }
+  .cc-video-card video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+  .cc-video-card::after {
+    content: '';
+    position: absolute;
+    inset: 45% 0 0;
+    background: linear-gradient(transparent, rgba(0,0,0,.9));
+    pointer-events: none;
+  }
+  .cc-video-info {
+    position: absolute;
+    z-index: 2;
+    left: 18px;
+    right: 18px;
+    bottom: 17px;
+    pointer-events: none;
+  }
+  .cc-video-info span {
+    display: block;
+    color: var(--gold);
+    font-family: 'Sora', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .cc-video-info strong {
+    font-family: 'Sora', sans-serif;
+    font-size: 17px;
+    line-height: 1.2;
+  }
+  .cc-video-sound {
+    position: absolute;
+    z-index: 3;
+    top: 14px;
+    right: 14px;
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 50%;
+    color: #fff;
+    background: rgba(0,0,0,.55);
+    backdrop-filter: blur(8px);
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+  }
+  .cc-video-hint {
+    max-width: 1200px;
+    margin: 18px auto 0;
+    padding: 0 40px;
+    color: var(--gray);
+    font-size: 12px;
+  }
+  @media (max-width: 768px) {
+    .cc-showcase { padding: 56px 0 64px; }
+    .cc-showcase-head { padding: 0 20px; }
+    .cc-video-rail {
+      grid-auto-columns: 78vw;
+      padding: 0 20px;
+      gap: 14px;
+    }
+    .cc-video-card { height: 500px; }
+    .cc-video-hint { padding: 0 20px; }
+  }
+
 </style>
 </head>
 <body>
@@ -288,6 +405,42 @@
       Quero conteúdo pra minha empresa →
     </a>
   </div>
+</section>
+
+<!-- PORTFÓLIO EM VÍDEO -->
+<section class="cc-showcase" id="portfolio-videos">
+  <div class="cc-showcase-head reveal">
+    <div class="section-tag">Portfólio em movimento</div>
+    <h2>Construção civil que<br><span class="gold">ganha vida na tela.</span></h2>
+    <p>Vídeos verticais criados para apresentar empreendimentos, valorizar projetos e transformar cada detalhe da obra em conteúdo que prende a atenção.</p>
+  </div>
+  <div class="cc-video-rail" aria-label="Portfólio de vídeos para construção civil">
+    <article class="cc-video-card" onclick="togglePortfolioVideo(this)">
+      <video autoplay muted loop playsinline preload="metadata"><source src="/assets/construcao/cora.mp4" type="video/mp4"></video>
+      <div class="cc-video-sound">🔇</div><div class="cc-video-info"><span>Empreendimento</span><strong>Corá</strong></div>
+    </article>
+    <article class="cc-video-card" onclick="togglePortfolioVideo(this)">
+      <video autoplay muted loop playsinline preload="metadata"><source src="/assets/construcao/infinity.mp4" type="video/mp4"></video>
+      <div class="cc-video-sound">🔇</div><div class="cc-video-info"><span>Projeto imobiliário</span><strong>Infinity</strong></div>
+    </article>
+    <article class="cc-video-card" onclick="togglePortfolioVideo(this)">
+      <video autoplay muted loop playsinline preload="metadata"><source src="/assets/construcao/trafego-pago.mp4" type="video/mp4"></video>
+      <div class="cc-video-sound">🔇</div><div class="cc-video-info"><span>Performance</span><strong>Tráfego Pago</strong></div>
+    </article>
+    <article class="cc-video-card" onclick="togglePortfolioVideo(this)">
+      <video autoplay muted loop playsinline preload="metadata"><source src="/assets/construcao/marbella.mp4" type="video/mp4"></video>
+      <div class="cc-video-sound">🔇</div><div class="cc-video-info"><span>Empreendimento</span><strong>Marbella</strong></div>
+    </article>
+    <article class="cc-video-card" onclick="togglePortfolioVideo(this)">
+      <video autoplay muted loop playsinline preload="metadata"><source src="/assets/construcao/versatil-trafego.mp4" type="video/mp4"></video>
+      <div class="cc-video-sound">🔇</div><div class="cc-video-info"><span>Empresa</span><strong>Versátil</strong></div>
+    </article>
+    <article class="cc-video-card" onclick="togglePortfolioVideo(this)">
+      <video autoplay muted loop playsinline preload="metadata"><source src="/assets/construcao/a-yoshii.mp4" type="video/mp4"></video>
+      <div class="cc-video-sound">🔇</div><div class="cc-video-info"><span>Construtora</span><strong>A.Yoshii</strong></div>
+    </article>
+  </div>
+  <div class="cc-video-hint">Arraste para o lado para ver mais · toque em um vídeo para ativar o som</div>
 </section>
 
 <!-- PROBLEMS -->
@@ -621,6 +774,23 @@ document.querySelectorAll('.step').forEach((step, i) => {
 window.addEventListener('scroll', () => {
   document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 50);
 });
+</script>
+
+
+<script>
+  function togglePortfolioVideo(card) {
+    const video = card.querySelector('video');
+    const icon = card.querySelector('.cc-video-sound');
+    document.querySelectorAll('.cc-video-card video').forEach(item => {
+      if (item !== video) item.muted = true;
+    });
+    document.querySelectorAll('.cc-video-sound').forEach(item => {
+      if (item !== icon) item.textContent = '🔇';
+    });
+    video.muted = !video.muted;
+    icon.textContent = video.muted ? '🔇' : '🔊';
+    video.play();
+  }
 </script>
 
 </body>
