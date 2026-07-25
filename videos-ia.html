@@ -270,6 +270,20 @@ footer a{color:var(--ciano)}
 .metric-card .r-print em{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--roxo),#E879F9);color:#fff;font-size:1.15rem;padding-left:3px}
 .resultados-reais{align-items:stretch}.resultados-reais .r-num{font-size:1.35rem}
 @media(max-width:600px){.ia-rail{grid-auto-columns:78vw}.ia-rail .v-card{height:500px}.resultados-reais{grid-template-columns:1fr}}
+
+/* Carrossel fluido e previews reais */
+#portfolio{padding-top:64px;padding-bottom:72px}
+.ia-rail{display:flex!important;gap:18px;overflow-x:hidden!important;scroll-behavior:auto;padding:10px 0 24px;cursor:grab;touch-action:pan-y;mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent)}
+.ia-rail:active{cursor:grabbing}
+.ia-rail .v-card{flex:0 0 clamp(235px,20vw,285px);height:auto!important;aspect-ratio:9/16!important;min-height:0;scroll-snap-align:none}
+.ia-rail .v-card video{object-fit:cover;object-position:center}
+.resultados-reais{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.insta-case{overflow:hidden;background:var(--card)}
+.insta-preview{height:520px;background:#fff;overflow:hidden;border-bottom:1px solid var(--card-border)}
+.insta-preview iframe{width:100%;height:100%;display:block;background:#fff}
+.insta-case .r-meta{min-height:118px}
+@media(max-width:900px){.resultados-reais{grid-template-columns:repeat(2,minmax(0,1fr))}.insta-preview{height:500px}}
+@media(max-width:600px){#portfolio{padding-top:48px}.ia-rail{gap:12px;mask-image:none}.ia-rail .v-card{flex-basis:76vw}.resultados-reais{grid-template-columns:1fr}.insta-preview{height:570px}}
 </style>
 </head>
 <body>
@@ -334,6 +348,16 @@ footer a{color:var(--ciano)}
     </div>
   </div>
 </header>
+
+<!-- ============ PORTFÓLIO ============ -->
+<section id="portfolio" class="fundo-soft"><div class="wrap"><span class="eyebrow reveal">Portfólio IA</span><h2 class="reveal">IA que vira <span class="grad">conteúdo de verdade.</span></h2><p class="sub-secao reveal">Os novos trabalhos já aparecem no começo da página. Arraste para o lado e toque no alto-falante para ouvir.</p><div class="videos-grid ia-rail"><div class="v-card reveal"><video src="/assets/ia/24-07.mp4" muted loop playsinline preload="metadata"></video><span class="v-tag">🤖 IA aplicada</span><button class="som-btn" aria-label="Ativar som">🔇</button><div class="v-info"><b>Criação com IA — 24-07</b><span>Conteúdo criativo</span></div></div>
+<div class="v-card reveal"><video src="/assets/ia/haaland.mp4" muted loop playsinline preload="metadata"></video><span class="v-tag">🤖 IA aplicada</span><button class="som-btn" aria-label="Ativar som">🔇</button><div class="v-info"><b>IA + Futebol — Haaland</b><span>Conteúdo esportivo</span></div></div>
+<div class="v-card reveal"><video src="/assets/ia/santa-helena.mp4" muted loop playsinline preload="metadata"></video><span class="v-tag">🤖 IA aplicada</span><button class="som-btn" aria-label="Ativar som">🔇</button><div class="v-info"><b>Santa Helena — Campina</b><span>Campanha local</span></div></div>
+<div class="v-card reveal"><video src="/assets/ia/gttaa.mp4" muted loop playsinline preload="metadata"></video><span class="v-tag">🤖 IA aplicada</span><button class="som-btn" aria-label="Ativar som">🔇</button><div class="v-info"><b>Experimento criativo — GTTA</b><span>Vídeo com IA</span></div></div>
+<div class="v-card reveal"><video src="/assets/ia/brasil-escocia-miami.mp4" muted loop playsinline preload="metadata"></video><span class="v-tag">🤖 IA aplicada</span><button class="som-btn" aria-label="Ativar som">🔇</button><div class="v-info"><b>Brasil e Escócia — Miami</b><span>Conteúdo esportivo</span></div></div>
+<div class="v-card reveal"><video src="/assets/ia/rodrigo-sinal.mp4" muted loop playsinline preload="metadata"></video><span class="v-tag">🤖 IA aplicada</span><button class="som-btn" aria-label="Ativar som">🔇</button><div class="v-info"><b>Rodrigo Sinal</b><span>Automobilismo</span></div></div></div></div></section>
+
+
 
 <!-- ============ MARQUEE FERRAMENTAS ============ -->
 <div class="ferramentas">
@@ -401,28 +425,20 @@ footer a{color:var(--ciano)}
   </div>
 </section>
 
-<!-- ============ PORTFÓLIO ============ -->
-<section id="portfolio" class="fundo-soft"><div class="wrap"><span class="eyebrow reveal">Portfólio IA</span><h2 class="reveal">IA que vira <span class="grad">conteúdo de verdade.</span></h2><p class="sub-secao reveal">Os novos trabalhos já aparecem no começo da página. Arraste para o lado e toque no alto-falante para ouvir.</p><div class="videos-grid ia-rail"><div class="v-card reveal"><video src="/assets/ia/24-07.mp4" muted loop playsinline preload="metadata"></video><span class="v-tag">🤖 IA aplicada</span><button class="som-btn" aria-label="Ativar som">🔇</button><div class="v-info"><b>Criação com IA — 24-07</b><span>Conteúdo criativo</span></div></div>
-<div class="v-card reveal"><video src="/assets/ia/haaland.mp4" muted loop playsinline preload="metadata"></video><span class="v-tag">🤖 IA aplicada</span><button class="som-btn" aria-label="Ativar som">🔇</button><div class="v-info"><b>IA + Futebol — Haaland</b><span>Conteúdo esportivo</span></div></div>
-<div class="v-card reveal"><video src="/assets/ia/santa-helena.mp4" muted loop playsinline preload="metadata"></video><span class="v-tag">🤖 IA aplicada</span><button class="som-btn" aria-label="Ativar som">🔇</button><div class="v-info"><b>Santa Helena — Campina</b><span>Campanha local</span></div></div>
-<div class="v-card reveal"><video src="/assets/ia/gttaa.mp4" muted loop playsinline preload="metadata"></video><span class="v-tag">🤖 IA aplicada</span><button class="som-btn" aria-label="Ativar som">🔇</button><div class="v-info"><b>Experimento criativo — GTTA</b><span>Vídeo com IA</span></div></div>
-<div class="v-card reveal"><video src="/assets/ia/brasil-escocia-miami.mp4" muted loop playsinline preload="metadata"></video><span class="v-tag">🤖 IA aplicada</span><button class="som-btn" aria-label="Ativar som">🔇</button><div class="v-info"><b>Brasil e Escócia — Miami</b><span>Conteúdo esportivo</span></div></div>
-<div class="v-card reveal"><video src="/assets/ia/rodrigo-sinal.mp4" muted loop playsinline preload="metadata"></video><span class="v-tag">🤖 IA aplicada</span><button class="som-btn" aria-label="Ativar som">🔇</button><div class="v-info"><b>Rodrigo Sinal</b><span>Automobilismo</span></div></div></div></div></section>
-
 <!-- ============ RESULTADOS / INSTAGRAM ============ -->
-<section id="resultados"><div class="wrap"><span class="eyebrow reveal">Resultados publicados</span><h2 class="reveal">Conteúdo no ar e <span class="grad">resultado verificável.</span></h2><p class="sub-secao reveal">Curtidas e comentários consultados nas publicações públicas do Instagram. As visualizações não são exibidas publicamente em todos os posts, por isso não mostramos números estimados.</p><div class="resultados-grid resultados-reais"><a class="r-card reveal metric-card" href="https://www.instagram.com/rodrigo_taborda33/reel/DYA4ZkIuovG/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">1.713 curtidas</span><b>Interlagos / Dona Maria</b><span>74 comentários · métricas públicas verificadas</span></div></a>
-<a class="r-card reveal metric-card" href="https://www.instagram.com/rodrigo_taborda33/reel/DaKxyAhpFA-/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">22 mil curtidas</span><b>Brasil x Japão</b><span>783 comentários · métricas públicas verificadas</span></div></a>
-<a class="r-card reveal metric-card" href="https://www.instagram.com/rodrigo_taborda33/reel/DbI6O7rucT1/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">35 mil curtidas</span><b>Jacaré / etapa Cuiabá</b><span>246 comentários · métricas públicas verificadas</span></div></a>
-<a class="r-card reveal metric-card" href="https://www.instagram.com/p/Da5cl7NuuQf/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">626 curtidas</span><b>Chegada à 5ª etapa</b><span>20 comentários · métricas públicas verificadas</span></div></a>
-<a class="r-card reveal metric-card" href="https://www.instagram.com/p/Daa-Mi5JDNL/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">160 curtidas</span><b>Hoje é dia Brasil</b><span>11 comentários · métricas públicas verificadas</span></div></a>
-<a class="r-card reveal metric-card" href="https://www.instagram.com/p/DXyNEu1hCi8/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">17 mil curtidas</span><b>32 anos sem Ayrton Senna</b><span>358 comentários · métricas públicas verificadas</span></div></a>
-<a class="r-card reveal metric-card" href="https://www.instagram.com/p/DXII5Fqga0f/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">631 curtidas</span><b>Léo vs. Tom & Jerry</b><span>61 comentários · métricas públicas verificadas</span></div></a>
-<a class="r-card reveal metric-card" href="https://www.instagram.com/p/DZXj3wZFd36/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">5.038 curtidas</span><b>Pedro Muffato de volta</b><span>76 comentários · métricas públicas verificadas</span></div></a>
-<a class="r-card reveal metric-card" href="https://www.instagram.com/p/DZLkf5LgYkK/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">851 curtidas</span><b>Trator / Cuiabá</b><span>37 comentários · métricas públicas verificadas</span></div></a>
-<a class="r-card reveal metric-card" href="https://www.instagram.com/p/DZI4dnXyBrN/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">1.211 curtidas</span><b>Luzes no meio do mato</b><span>99 comentários · métricas públicas verificadas</span></div></a>
-<a class="r-card reveal metric-card" href="https://www.instagram.com/p/DWzlePuEqqy/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">879 curtidas</span><b>NASA na Lua / Fórmula Truck</b><span>18 comentários · métricas públicas verificadas</span></div></a>
-<a class="r-card reveal metric-card" href="https://www.instagram.com/p/DVW0vp0kcIH/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">174 curtidas</span><b>Santa Cruz do Sul</b><span>11 comentários · métricas públicas verificadas</span></div></a>
-<a class="r-card reveal metric-card" href="https://www.instagram.com/p/DVbmcxzjmm8/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">439 curtidas</span><b>Brutos e Furiosos</b><span>11 comentários · métricas públicas verificadas</span></div></a></div></div></section>
+<section id="resultados"><div class="wrap"><span class="eyebrow reveal">Resultados publicados</span><h2 class="reveal">Conteúdo no ar e <span class="grad">resultado verificável.</span></h2><p class="sub-secao reveal">Agora cada case mostra o preview da publicação oficial. Curtidas e comentários foram conferidos nos posts públicos; visualizações não são estimadas.</p><div class="resultados-grid resultados-reais"><article class="r-card reveal insta-case"><div class="insta-preview"><iframe src="https://www.instagram.com/reel/DYA4ZkIuovG/embed/" title="Preview: Interlagos / Dona Maria" loading="lazy" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div><div class="r-meta"><span class="r-num">1.713 curtidas</span><b>Interlagos / Dona Maria</b><span>74 comentários · publicação oficial</span></div></article>
+<article class="r-card reveal insta-case"><div class="insta-preview"><iframe src="https://www.instagram.com/reel/DaKxyAhpFA-/embed/" title="Preview: Brasil x Japão" loading="lazy" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div><div class="r-meta"><span class="r-num">22 mil curtidas</span><b>Brasil x Japão</b><span>783 comentários · publicação oficial</span></div></article>
+<article class="r-card reveal insta-case"><div class="insta-preview"><iframe src="https://www.instagram.com/reel/DbI6O7rucT1/embed/" title="Preview: Jacaré / etapa Cuiabá" loading="lazy" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div><div class="r-meta"><span class="r-num">35 mil curtidas</span><b>Jacaré / etapa Cuiabá</b><span>246 comentários · publicação oficial</span></div></article>
+<article class="r-card reveal insta-case"><div class="insta-preview"><iframe src="https://www.instagram.com/p/Da5cl7NuuQf/embed/" title="Preview: Chegada à 5ª etapa" loading="lazy" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div><div class="r-meta"><span class="r-num">626 curtidas</span><b>Chegada à 5ª etapa</b><span>20 comentários · publicação oficial</span></div></article>
+<article class="r-card reveal insta-case"><div class="insta-preview"><iframe src="https://www.instagram.com/p/Daa-Mi5JDNL/embed/" title="Preview: Hoje é dia Brasil" loading="lazy" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div><div class="r-meta"><span class="r-num">160 curtidas</span><b>Hoje é dia Brasil</b><span>11 comentários · publicação oficial</span></div></article>
+<article class="r-card reveal insta-case"><div class="insta-preview"><iframe src="https://www.instagram.com/p/DXyNEu1hCi8/embed/" title="Preview: 32 anos sem Ayrton Senna" loading="lazy" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div><div class="r-meta"><span class="r-num">17 mil curtidas</span><b>32 anos sem Ayrton Senna</b><span>358 comentários · publicação oficial</span></div></article>
+<article class="r-card reveal insta-case"><div class="insta-preview"><iframe src="https://www.instagram.com/p/DXII5Fqga0f/embed/" title="Preview: Léo vs. Tom & Jerry" loading="lazy" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div><div class="r-meta"><span class="r-num">631 curtidas</span><b>Léo vs. Tom & Jerry</b><span>61 comentários · publicação oficial</span></div></article>
+<article class="r-card reveal insta-case"><div class="insta-preview"><iframe src="https://www.instagram.com/p/DZXj3wZFd36/embed/" title="Preview: Pedro Muffato de volta" loading="lazy" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div><div class="r-meta"><span class="r-num">5.038 curtidas</span><b>Pedro Muffato de volta</b><span>76 comentários · publicação oficial</span></div></article>
+<article class="r-card reveal insta-case"><div class="insta-preview"><iframe src="https://www.instagram.com/p/DZLkf5LgYkK/embed/" title="Preview: Trator / Cuiabá" loading="lazy" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div><div class="r-meta"><span class="r-num">851 curtidas</span><b>Trator / Cuiabá</b><span>37 comentários · publicação oficial</span></div></article>
+<article class="r-card reveal insta-case"><div class="insta-preview"><iframe src="https://www.instagram.com/p/DZI4dnXyBrN/embed/" title="Preview: Luzes no meio do mato" loading="lazy" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div><div class="r-meta"><span class="r-num">1.211 curtidas</span><b>Luzes no meio do mato</b><span>99 comentários · publicação oficial</span></div></article>
+<article class="r-card reveal insta-case"><div class="insta-preview"><iframe src="https://www.instagram.com/p/DWzlePuEqqy/embed/" title="Preview: NASA na Lua / Fórmula Truck" loading="lazy" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div><div class="r-meta"><span class="r-num">879 curtidas</span><b>NASA na Lua / Fórmula Truck</b><span>18 comentários · publicação oficial</span></div></article>
+<article class="r-card reveal insta-case"><div class="insta-preview"><iframe src="https://www.instagram.com/p/DVW0vp0kcIH/embed/" title="Preview: Santa Cruz do Sul" loading="lazy" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div><div class="r-meta"><span class="r-num">174 curtidas</span><b>Santa Cruz do Sul</b><span>11 comentários · publicação oficial</span></div></article>
+<article class="r-card reveal insta-case"><div class="insta-preview"><iframe src="https://www.instagram.com/p/DVbmcxzjmm8/embed/" title="Preview: Brutos e Furiosos" loading="lazy" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div><div class="r-meta"><span class="r-num">439 curtidas</span><b>Brutos e Furiosos</b><span>11 comentários · publicação oficial</span></div></article></div></div></section>
 
 <!-- ============ CLIENTES ============ -->
 <section id="clientes" class="fundo-soft">
@@ -595,6 +611,22 @@ const obsC=new IntersectionObserver(es=>es.forEach(e=>{
   obsC.unobserve(el);
 }),{threshold:.5});
 document.querySelectorAll('[data-conta]').forEach(el=>obsC.observe(el));
+
+
+/* ---------- Carrossel automático contínuo ---------- */
+const trilhoIA=document.querySelector('.ia-rail');
+if(trilhoIA && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  [...trilhoIA.children].forEach(card=>{const clone=card.cloneNode(true);clone.setAttribute('aria-hidden','true');clone.querySelectorAll('video').forEach(v=>{v.muted=true;v.removeAttribute('autoplay')});trilhoIA.appendChild(clone)});
+  let pausado=false,arrastando=false,inicioX=0,inicioScroll=0;
+  const metade=()=>trilhoIA.scrollWidth/2;
+  function mover(){if(!pausado&&!arrastando){trilhoIA.scrollLeft+=0.38;if(trilhoIA.scrollLeft>=metade())trilhoIA.scrollLeft-=metade()}requestAnimationFrame(mover)}
+  trilhoIA.addEventListener('mouseenter',()=>pausado=true);trilhoIA.addEventListener('mouseleave',()=>pausado=false);
+  trilhoIA.addEventListener('focusin',()=>pausado=true);trilhoIA.addEventListener('focusout',()=>pausado=false);
+  trilhoIA.addEventListener('pointerdown',e=>{arrastando=true;inicioX=e.clientX;inicioScroll=trilhoIA.scrollLeft;trilhoIA.setPointerCapture(e.pointerId)});
+  trilhoIA.addEventListener('pointermove',e=>{if(arrastando)trilhoIA.scrollLeft=inicioScroll-(e.clientX-inicioX)});
+  trilhoIA.addEventListener('pointerup',()=>arrastando=false);trilhoIA.addEventListener('pointercancel',()=>arrastando=false);
+  requestAnimationFrame(mover);
+}
 
 /* ---------- Reprodução apenas quando visível ---------- */
 const obsVideo=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){v.play().catch(()=>{})}else{v.pause()}}),{threshold:.45});
