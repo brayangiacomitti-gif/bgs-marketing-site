@@ -261,6 +261,15 @@ footer a{color:var(--ciano)}
 .wpp-tooltip.on{opacity:1;transform:none}
 .wpp-tooltip::after{content:'';position:absolute;right:-6px;top:50%;transform:translateY(-50%);border-left:7px solid #fff;border-top:6px solid transparent;border-bottom:6px solid transparent}
 @media(max-width:560px){.wpp-tooltip{display:none}}
+
+/* Galerias reais IA */
+.ia-rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(230px,285px);grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 2px 24px;scrollbar-color:var(--roxo) transparent}
+.ia-rail .v-card{scroll-snap-align:start;height:510px;aspect-ratio:auto}
+.metric-card{display:block;transition:transform .25s,border-color .25s}.metric-card:hover{transform:translateY(-6px);border-color:var(--ciano)}
+.metric-card .r-print{aspect-ratio:auto;min-height:130px;background:radial-gradient(circle at 30% 20%,rgba(232,121,249,.28),transparent 45%),linear-gradient(145deg,rgba(139,92,246,.25),rgba(34,211,238,.12))}
+.metric-card .r-print em{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--roxo),#E879F9);color:#fff;font-size:1.15rem;padding-left:3px}
+.resultados-reais{align-items:stretch}.resultados-reais .r-num{font-size:1.35rem}
+@media(max-width:600px){.ia-rail{grid-auto-columns:78vw}.ia-rail .v-card{height:500px}.resultados-reais{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -393,91 +402,27 @@ footer a{color:var(--ciano)}
 </section>
 
 <!-- ============ PORTFÓLIO ============ -->
-<section id="portfolio" class="fundo-soft">
-  <div class="wrap">
-    <span class="eyebrow reveal">Portfólio IA</span>
-    <h2 class="reveal">Vídeos que <span class="grad">já estão rodando</span> por aí.</h2>
-    <p class="sub-secao reveal">Toque no vídeo para ativar o som. Tudo aqui foi criado ou potencializado com IA pela equipe BGS.</p>
+<section id="portfolio" class="fundo-soft"><div class="wrap"><span class="eyebrow reveal">Portfólio IA</span><h2 class="reveal">IA que vira <span class="grad">conteúdo de verdade.</span></h2><p class="sub-secao reveal">Os novos trabalhos já aparecem no começo da página. Arraste para o lado e toque no alto-falante para ouvir.</p><div class="videos-grid ia-rail"><div class="v-card reveal"><video src="/assets/ia/24-07.mp4" muted loop playsinline preload="metadata"></video><span class="v-tag">🤖 IA aplicada</span><button class="som-btn" aria-label="Ativar som">🔇</button><div class="v-info"><b>Criação com IA — 24-07</b><span>Conteúdo criativo</span></div></div>
+<div class="v-card reveal"><video src="/assets/ia/haaland.mp4" muted loop playsinline preload="metadata"></video><span class="v-tag">🤖 IA aplicada</span><button class="som-btn" aria-label="Ativar som">🔇</button><div class="v-info"><b>IA + Futebol — Haaland</b><span>Conteúdo esportivo</span></div></div>
+<div class="v-card reveal"><video src="/assets/ia/santa-helena.mp4" muted loop playsinline preload="metadata"></video><span class="v-tag">🤖 IA aplicada</span><button class="som-btn" aria-label="Ativar som">🔇</button><div class="v-info"><b>Santa Helena — Campina</b><span>Campanha local</span></div></div>
+<div class="v-card reveal"><video src="/assets/ia/gttaa.mp4" muted loop playsinline preload="metadata"></video><span class="v-tag">🤖 IA aplicada</span><button class="som-btn" aria-label="Ativar som">🔇</button><div class="v-info"><b>Experimento criativo — GTTA</b><span>Vídeo com IA</span></div></div>
+<div class="v-card reveal"><video src="/assets/ia/brasil-escocia-miami.mp4" muted loop playsinline preload="metadata"></video><span class="v-tag">🤖 IA aplicada</span><button class="som-btn" aria-label="Ativar som">🔇</button><div class="v-info"><b>Brasil e Escócia — Miami</b><span>Conteúdo esportivo</span></div></div>
+<div class="v-card reveal"><video src="/assets/ia/rodrigo-sinal.mp4" muted loop playsinline preload="metadata"></video><span class="v-tag">🤖 IA aplicada</span><button class="som-btn" aria-label="Ativar som">🔇</button><div class="v-info"><b>Rodrigo Sinal</b><span>Automobilismo</span></div></div></div></div></section>
 
-    <div class="videos-grid">
-      <div class="v-card reveal">
-        <video src="https://res.cloudinary.com/daztqfdvf/video/upload/q_auto,w_400,f_mp4/v1774621313/MADEMAPE_chrjeu.mp4" autoplay muted loop playsinline></video>
-        <span class="v-tag">🤖 Híbrido IA</span>
-        <button class="som-btn" aria-label="Ativar som">🔇</button>
-        <div class="v-info"><b>Mademape Madeiras</b><span>Indústria madeireira</span></div>
-      </div>
-      <div class="v-card reveal">
-        <video src="https://res.cloudinary.com/daztqfdvf/video/upload/q_auto,w_400,f_mp4/v1774621348/0316_1_yg8eld.mp4" autoplay muted loop playsinline></video>
-        <span class="v-tag">🤖 Híbrido IA</span>
-        <button class="som-btn" aria-label="Ativar som">🔇</button>
-        <div class="v-info"><b>Casa das Latas Colombo</b><span>Autopeças</span></div>
-      </div>
-      <!-- SUBSTITUA: adicione aqui os links dos seus próximos vídeos com IA (Cloudinary) -->
-      <div class="v-card v-placeholder reveal">
-        <em>🎬</em>
-        <p><b>Espaço reservado</b><br>Adicione aqui seu próximo vídeo 100% IA</p>
-      </div>
-      <div class="v-card v-placeholder reveal">
-        <em>✨</em>
-        <p><b>Espaço reservado</b><br>Adicione aqui seu próximo vídeo 100% IA</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ RESULTADOS / PRINTS ============ -->
-<section id="resultados">
-  <div class="wrap">
-    <span class="eyebrow reveal">Prova real</span>
-    <h2 class="reveal">Resultados que aparecem <span class="grad">no print.</span></h2>
-    <p class="sub-secao reveal">Números reais dos perfis que gerenciamos. Sem mágica: estratégia + consistência + IA aplicada do jeito certo.</p>
-
-    <div class="resultados-grid">
-      <!-- SUBSTITUA: troque cada bloco .r-print pelo print real -->
-      <!-- Exemplo com imagem: <div class="r-print"><img src="SEU_PRINT.jpg" alt="Print de resultado"></div> -->
-      <div class="r-card reveal">
-        <div class="r-print">
-          <em>📈</em>
-          <p>Insira aqui o print do Instagram Insights (alcance / visualizações)</p>
-        </div>
-        <div class="r-meta">
-          <span class="r-num">+340%</span>
-          <b>Aumento de engajamento</b>
-          <span>Cliente do setor de eventos · 30 dias</span>
-        </div>
-      </div>
-      <div class="r-card reveal">
-        <div class="r-print">
-          <em>👁️</em>
-          <p>Insira aqui o print do Reels com mais visualizações</p>
-        </div>
-        <div class="r-meta">
-          <span class="r-num">+100 mil</span>
-          <b>Visualizações em um único Reels</b>
-          <span>Vídeo híbrido com IA · orgânico</span>
-        </div>
-      </div>
-      <div class="r-card reveal">
-        <div class="r-print">
-          <em>💬</em>
-          <p>Insira aqui o print de mensagens/leads chegando no WhatsApp</p>
-        </div>
-        <div class="r-meta">
-          <span class="r-num">3x</span>
-          <b>Mais contatos no WhatsApp</b>
-          <span>Após série de vídeos com IA + tráfego</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="contadores">
-      <div class="c-item reveal"><b data-conta="200" data-prefixo="+">0</b><span>marcas atendidas</span></div>
-      <div class="c-item reveal"><b data-conta="500" data-prefixo="+">0</b><span>vídeos produzidos</span></div>
-      <div class="c-item reveal"><b data-conta="72" data-sufixo="h">0</b><span>entrega média com IA</span></div>
-      <div class="c-item reveal"><b data-conta="5" data-sufixo="★">0</b><span>avaliação no Google</span></div>
-    </div>
-  </div>
-</section>
+<!-- ============ RESULTADOS / INSTAGRAM ============ -->
+<section id="resultados"><div class="wrap"><span class="eyebrow reveal">Resultados publicados</span><h2 class="reveal">Conteúdo no ar e <span class="grad">resultado verificável.</span></h2><p class="sub-secao reveal">Curtidas e comentários consultados nas publicações públicas do Instagram. As visualizações não são exibidas publicamente em todos os posts, por isso não mostramos números estimados.</p><div class="resultados-grid resultados-reais"><a class="r-card reveal metric-card" href="https://www.instagram.com/rodrigo_taborda33/reel/DYA4ZkIuovG/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">1.713 curtidas</span><b>Interlagos / Dona Maria</b><span>74 comentários · métricas públicas verificadas</span></div></a>
+<a class="r-card reveal metric-card" href="https://www.instagram.com/rodrigo_taborda33/reel/DaKxyAhpFA-/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">22 mil curtidas</span><b>Brasil x Japão</b><span>783 comentários · métricas públicas verificadas</span></div></a>
+<a class="r-card reveal metric-card" href="https://www.instagram.com/rodrigo_taborda33/reel/DbI6O7rucT1/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">35 mil curtidas</span><b>Jacaré / etapa Cuiabá</b><span>246 comentários · métricas públicas verificadas</span></div></a>
+<a class="r-card reveal metric-card" href="https://www.instagram.com/p/Da5cl7NuuQf/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">626 curtidas</span><b>Chegada à 5ª etapa</b><span>20 comentários · métricas públicas verificadas</span></div></a>
+<a class="r-card reveal metric-card" href="https://www.instagram.com/p/Daa-Mi5JDNL/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">160 curtidas</span><b>Hoje é dia Brasil</b><span>11 comentários · métricas públicas verificadas</span></div></a>
+<a class="r-card reveal metric-card" href="https://www.instagram.com/p/DXyNEu1hCi8/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">17 mil curtidas</span><b>32 anos sem Ayrton Senna</b><span>358 comentários · métricas públicas verificadas</span></div></a>
+<a class="r-card reveal metric-card" href="https://www.instagram.com/p/DXII5Fqga0f/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">631 curtidas</span><b>Léo vs. Tom & Jerry</b><span>61 comentários · métricas públicas verificadas</span></div></a>
+<a class="r-card reveal metric-card" href="https://www.instagram.com/p/DZXj3wZFd36/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">5.038 curtidas</span><b>Pedro Muffato de volta</b><span>76 comentários · métricas públicas verificadas</span></div></a>
+<a class="r-card reveal metric-card" href="https://www.instagram.com/p/DZLkf5LgYkK/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">851 curtidas</span><b>Trator / Cuiabá</b><span>37 comentários · métricas públicas verificadas</span></div></a>
+<a class="r-card reveal metric-card" href="https://www.instagram.com/p/DZI4dnXyBrN/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">1.211 curtidas</span><b>Luzes no meio do mato</b><span>99 comentários · métricas públicas verificadas</span></div></a>
+<a class="r-card reveal metric-card" href="https://www.instagram.com/p/DWzlePuEqqy/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">879 curtidas</span><b>NASA na Lua / Fórmula Truck</b><span>18 comentários · métricas públicas verificadas</span></div></a>
+<a class="r-card reveal metric-card" href="https://www.instagram.com/p/DVW0vp0kcIH/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">174 curtidas</span><b>Santa Cruz do Sul</b><span>11 comentários · métricas públicas verificadas</span></div></a>
+<a class="r-card reveal metric-card" href="https://www.instagram.com/p/DVbmcxzjmm8/" target="_blank" rel="noopener"><div class="r-print"><em>▶</em><p>Ver publicação oficial no Instagram</p></div><div class="r-meta"><span class="r-num">439 curtidas</span><b>Brutos e Furiosos</b><span>11 comentários · métricas públicas verificadas</span></div></a></div></div></section>
 
 <!-- ============ CLIENTES ============ -->
 <section id="clientes" class="fundo-soft">
@@ -650,6 +595,10 @@ const obsC=new IntersectionObserver(es=>es.forEach(e=>{
   obsC.unobserve(el);
 }),{threshold:.5});
 document.querySelectorAll('[data-conta]').forEach(el=>obsC.observe(el));
+
+/* ---------- Reprodução apenas quando visível ---------- */
+const obsVideo=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){v.play().catch(()=>{})}else{v.pause()}}),{threshold:.45});
+document.querySelectorAll('.ia-rail video').forEach(v=>obsVideo.observe(v));
 
 /* ---------- Som dos vídeos ---------- */
 document.querySelectorAll('.som-btn').forEach(btn=>{
