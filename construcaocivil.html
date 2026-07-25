@@ -416,27 +416,27 @@
   </div>
   <div class="cc-video-rail" aria-label="Portfólio de vídeos para construção civil">
     <article class="cc-video-card" onclick="togglePortfolioVideo(this)">
-      <video autoplay muted loop playsinline preload="metadata"><source src="/assets/construcao/cora.mp4" type="video/mp4"></video>
+      <video muted loop playsinline preload="metadata"><source src="/assets/construcao/cora.mp4" type="video/mp4"></video>
       <div class="cc-video-sound">🔇</div><div class="cc-video-info"><span>Empreendimento</span><strong>Corá</strong></div>
     </article>
     <article class="cc-video-card" onclick="togglePortfolioVideo(this)">
-      <video autoplay muted loop playsinline preload="metadata"><source src="/assets/construcao/infinity.mp4" type="video/mp4"></video>
+      <video muted loop playsinline preload="metadata"><source src="/assets/construcao/infinity.mp4" type="video/mp4"></video>
       <div class="cc-video-sound">🔇</div><div class="cc-video-info"><span>Projeto imobiliário</span><strong>Infinity</strong></div>
     </article>
     <article class="cc-video-card" onclick="togglePortfolioVideo(this)">
-      <video autoplay muted loop playsinline preload="metadata"><source src="/assets/construcao/trafego-pago.mp4" type="video/mp4"></video>
+      <video muted loop playsinline preload="metadata"><source src="/assets/construcao/trafego-pago.mp4" type="video/mp4"></video>
       <div class="cc-video-sound">🔇</div><div class="cc-video-info"><span>Performance</span><strong>Tráfego Pago</strong></div>
     </article>
     <article class="cc-video-card" onclick="togglePortfolioVideo(this)">
-      <video autoplay muted loop playsinline preload="metadata"><source src="/assets/construcao/marbella.mp4" type="video/mp4"></video>
+      <video muted loop playsinline preload="metadata"><source src="/assets/construcao/marbella.mp4" type="video/mp4"></video>
       <div class="cc-video-sound">🔇</div><div class="cc-video-info"><span>Empreendimento</span><strong>Marbella</strong></div>
     </article>
     <article class="cc-video-card" onclick="togglePortfolioVideo(this)">
-      <video autoplay muted loop playsinline preload="metadata"><source src="/assets/construcao/versatil-trafego.mp4" type="video/mp4"></video>
+      <video muted loop playsinline preload="metadata"><source src="/assets/construcao/versatil-trafego.mp4" type="video/mp4"></video>
       <div class="cc-video-sound">🔇</div><div class="cc-video-info"><span>Empresa</span><strong>Versátil</strong></div>
     </article>
     <article class="cc-video-card" onclick="togglePortfolioVideo(this)">
-      <video autoplay muted loop playsinline preload="metadata"><source src="/assets/construcao/a-yoshii.mp4" type="video/mp4"></video>
+      <video muted loop playsinline preload="metadata"><source src="/assets/construcao/a-yoshii.mp4" type="video/mp4"></video>
       <div class="cc-video-sound">🔇</div><div class="cc-video-info"><span>Construtora</span><strong>A.Yoshii</strong></div>
     </article>
   </div>
@@ -778,6 +778,21 @@ window.addEventListener('scroll', () => {
 
 
 <script>
+  const portfolioObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const video = entry.target;
+      if (entry.isIntersecting) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.35 });
+
+  document.querySelectorAll('.cc-video-card video').forEach(video => {
+    portfolioObserver.observe(video);
+  });
+
   function togglePortfolioVideo(card) {
     const video = card.querySelector('video');
     const icon = card.querySelector('.cc-video-sound');
