@@ -638,14 +638,14 @@ document.querySelectorAll('[data-conta]').forEach(el=>obsC.observe(el));
 const trilhoIA=document.querySelector('.ia-rail');
 if(trilhoIA){
   [...trilhoIA.children].forEach(card=>{const clone=card.cloneNode(true);clone.setAttribute('aria-hidden','true');clone.querySelectorAll('video').forEach(v=>{v.muted=true;v.removeAttribute('autoplay')});trilhoIA.appendChild(clone)});
-  let pausado=false,arrastando=false,inicioX=0,inicioScroll=0;
+  let pausado=false,arrastando=false,inicioX=0,inicioScroll=0,posIA=0;
   const metade=()=>trilhoIA.scrollWidth/2;
-  function mover(){if(!pausado&&!arrastando){trilhoIA.scrollLeft+=0.24;if(trilhoIA.scrollLeft>=metade())trilhoIA.scrollLeft-=metade()}requestAnimationFrame(mover)}
+  function mover(){if(!pausado&&!arrastando){posIA+=0.34;if(posIA>=metade())posIA-=metade();trilhoIA.scrollLeft=posIA}requestAnimationFrame(mover)}
   trilhoIA.addEventListener('mouseenter',()=>pausado=true);trilhoIA.addEventListener('mouseleave',()=>pausado=false);
   trilhoIA.addEventListener('focusin',()=>pausado=true);trilhoIA.addEventListener('focusout',()=>pausado=false);
   trilhoIA.addEventListener('pointerdown',e=>{arrastando=true;inicioX=e.clientX;inicioScroll=trilhoIA.scrollLeft;trilhoIA.setPointerCapture(e.pointerId)});
   trilhoIA.addEventListener('pointermove',e=>{if(arrastando)trilhoIA.scrollLeft=inicioScroll-(e.clientX-inicioX)});
-  trilhoIA.addEventListener('pointerup',()=>arrastando=false);trilhoIA.addEventListener('pointercancel',()=>arrastando=false);
+  trilhoIA.addEventListener('pointerup',()=>{arrastando=false;posIA=trilhoIA.scrollLeft});trilhoIA.addEventListener('pointercancel',()=>{arrastando=false;posIA=trilhoIA.scrollLeft});
   requestAnimationFrame(mover);
 }
 
