@@ -313,6 +313,15 @@ footer a{color:var(--ciano)}
 
 /* Garantia de conteúdo visível no mobile */
 @media(max-width:900px){.reveal,.fade-up,[data-reveal]{opacity:1!important;transform:none!important;visibility:visible!important;transition:none!important}.section-header,.method-inner,.equip-strip,.process,.storymaker-inner,.ai-inner,.video-scroll{opacity:1!important;transform:none!important;visibility:visible!important}}
+
+/* Refinamento final dos carrosséis */
+.ia-rail{overflow-x:hidden!important;scrollbar-width:none!important;-ms-overflow-style:none!important;padding-bottom:10px!important}
+.ia-rail::-webkit-scrollbar,.resultados-reais::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}
+.ia-rail .v-card{flex:0 0 clamp(200px,18vw,245px)!important}
+.resultados-reais{display:flex!important;grid-template-columns:none!important;gap:14px!important;overflow-x:auto!important;scroll-snap-type:x proximity;padding:8px 2px 18px!important;scrollbar-width:none!important;-ms-overflow-style:none!important}
+.resultados-reais .insta-case{flex:0 0 calc((100% - 28px)/3)!important;min-width:0!important;scroll-snap-align:start}
+.resultados-reais .insta-preview{height:360px!important}.resultados-reais .r-meta{min-height:105px!important;padding:15px 16px!important}.resultados-reais .r-num{font-size:1.05rem!important}.resultados-reais .r-meta b{font-size:.86rem!important}.resultados-reais .r-meta span{font-size:.73rem!important}
+@media(max-width:900px){.ia-rail{gap:12px!important;overflow-x:hidden!important}.ia-rail .v-card{flex:0 0 62vw!important;max-width:235px!important}.resultados-reais{gap:10px!important;overflow-x:auto!important}.resultados-reais .insta-case{flex:0 0 calc((100% - 10px)/2)!important}.resultados-reais .insta-preview{height:285px!important}.resultados-reais .r-meta{min-height:108px!important;padding:12px!important}.resultados-reais .r-num{font-size:.92rem!important}.resultados-reais .r-meta b{font-size:.78rem!important;line-height:1.25}.resultados-reais .r-meta span{font-size:.66rem!important;line-height:1.3;display:block;margin-top:5px}}
 </style>
 </head>
 <body>
@@ -627,11 +636,11 @@ document.querySelectorAll('[data-conta]').forEach(el=>obsC.observe(el));
 
 /* ---------- Carrossel automático contínuo ---------- */
 const trilhoIA=document.querySelector('.ia-rail');
-if(trilhoIA && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+if(trilhoIA){
   [...trilhoIA.children].forEach(card=>{const clone=card.cloneNode(true);clone.setAttribute('aria-hidden','true');clone.querySelectorAll('video').forEach(v=>{v.muted=true;v.removeAttribute('autoplay')});trilhoIA.appendChild(clone)});
   let pausado=false,arrastando=false,inicioX=0,inicioScroll=0;
   const metade=()=>trilhoIA.scrollWidth/2;
-  function mover(){if(!pausado&&!arrastando){trilhoIA.scrollLeft+=0.38;if(trilhoIA.scrollLeft>=metade())trilhoIA.scrollLeft-=metade()}requestAnimationFrame(mover)}
+  function mover(){if(!pausado&&!arrastando){trilhoIA.scrollLeft+=0.24;if(trilhoIA.scrollLeft>=metade())trilhoIA.scrollLeft-=metade()}requestAnimationFrame(mover)}
   trilhoIA.addEventListener('mouseenter',()=>pausado=true);trilhoIA.addEventListener('mouseleave',()=>pausado=false);
   trilhoIA.addEventListener('focusin',()=>pausado=true);trilhoIA.addEventListener('focusout',()=>pausado=false);
   trilhoIA.addEventListener('pointerdown',e=>{arrastando=true;inicioX=e.clientX;inicioScroll=trilhoIA.scrollLeft;trilhoIA.setPointerCapture(e.pointerId)});
